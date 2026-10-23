@@ -27,10 +27,10 @@ jobs:
       - run: npm run test:browser -- --workers=3
       - name: Firefox and WebKit gameplay
         # Firefox requires its session home to belong to the process user.
-        # Use the image's browser user; only generated report paths change ownership.
+        # Use the image's browser user; only generated report/cache paths change ownership.
         run: |
-          mkdir -p test-results playwright-compat-report
-          chown -R pwuser:pwuser test-results playwright-compat-report
+          mkdir -p test-results playwright-compat-report node_modules/.vite-temp
+          chown -R pwuser:pwuser test-results playwright-compat-report node_modules/.vite-temp
           runuser -u pwuser -- npm run test:compat
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
