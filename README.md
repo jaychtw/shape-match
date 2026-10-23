@@ -1,10 +1,10 @@
 # Shape Match
 
-A bilingual geometric match-3 game. Current milestone: **G1 visual direction review**, not a playable game or an approved final art direction.
+A bilingual geometric match-3 game. **G1 visual direction approved; G2 playable slice is awaiting creative review.** One representative level is playable; the full 15-level journey and Free Play remain gated G3 work. Dark mode is deferred from v1.0 by the creative director.
 
-## Develop
+## Develop and verify
 
-Node.js 22+ (24 recommended), npm.
+Node.js 24 (validated 24.19.0), npm. The immutable engine artifact is included in `vendor/`; no registry publication or new secret is needed.
 
 ```sh
 npm ci
@@ -14,29 +14,32 @@ npm test
 npm run build
 npx playwright install chromium
 npm run test:browser
+npm run validate:level
 ```
 
-In the cloud environment, keep caches writable:
+In this cloud machine, use `npm ci --cache /workspace/.npm-cache`; browser tests automatically use existing `/usr/bin/chromium`. Outside the snapshot, install Playwright Chromium as above. `CHROMIUM_PATH` selects another executable. A writable browser cache can be selected with `PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright` for both installation and tests. Browser tests start a production preview on port 4173 themselves; stop any existing service you started on that port before a clean test run.
 
-```sh
-npm ci --cache /workspace/.npm-cache
-npm run test:browser
-```
+Use the existing `/workspace/shape-match` checkout; no worktree is necessary. Both development and production use `/shape-match/` so GitHub Pages subpath assets work. `npm run preview -- --port 4173 --strictPort` serves a built bundle manually. Live processes must restart in each cloud task.
 
-Browser tests automatically use `/usr/bin/chromium` when present, or the Playwright-managed browser elsewhere. `CHROMIUM_PATH` overrides the executable. If a cloud machine has no system browser, install with `PLAYWRIGHT_BROWSERS_PATH=/workspace/.cache/ms-playwright npx playwright install chromium` and export that path when testing; browser download domains may need approval in environment settings.
+## Play the G2 slice
 
-The existing checkout is `/workspace/shape-match`; no worktree is needed. Vite uses `/shape-match/` for development and production so assets work under GitHub Pages. Browser tests start the production preview themselves. `npm run preview -- --port 4173 --strictPort` also starts it manually.
+Reach 1,800 points in 18 moves on an engine-seeded 8×8 board. Tap/click two neighbors, drag or swipe a shape toward a neighbor, or use arrow keys to move focus and Enter/Space to select. Escape cancels selection. The large arrow controls swap the selected piece. “Larger pieces” provides 44px-plus cells with pan buttons on narrow devices; the compact board remains available.
 
-## Review the visual study
+Rules, specials, all ten combinations, scoring and outcomes come exclusively from the pinned Match3 Core. Resolution input stays locked until ordered animations finish and displayed identities/counters/objectives match the authoritative engine result. Restart requires confirmation. Victory/defeat offer replay.
 
-The 8×8 board, sample HUD, ordinary/special piece collections, English/繁體中文 toggle, sample selection and Match/Cascade/Special effect controls form the review scene. Arrow keys move sample focus; Enter selects. Touch/click selects. Selection does not submit a move. Effects are labeled choreography, not gameplay. The real immutable engine is bundled and creates the sample board; production game rules remain entirely in it.
+English/繁體中文 switching preserves the active game. Reduced motion, language and board-size preferences persist locally. A complete engine state (including RNG), initial state and action trace are saved only at stable turn boundaries; reload restores exact deterministic continuation. Corrupt saves offer explicit backup/new-session recovery, and blocked storage is disclosed. Unexpected engine failures preserve the last valid session and offer a nonpersonal JSON diagnostic download.
 
-Preferences persist locally; blocked/malformed preference storage falls back without crashing. No gameplay session/progression persistence or sound is implemented at this gate.
+## References and evidence
 
-See [GDD](docs/design/GDD-v1.0.md), [handoff](docs/design/HANDOFF-v1.0.md), [architecture](docs/ARCHITECTURE.md), and [QA report](docs/QA.md). Screenshots are in `docs/evidence/`. Run the browser capture test to regenerate them from the production build.
+- [GDD](docs/design/GDD-v1.0.md), [original handoff](docs/design/HANDOFF-v1.0.md), [G2 authorization](docs/design/G2-AUTHORIZATION.md)
+- [Architecture and immutable engine identity](docs/ARCHITECTURE.md)
+- [G2 QA/limitations](docs/G2-QA.md); [historical G1 report](docs/QA.md)
+- `docs/evidence/g2-*.png`: actual browser screenshots; `g2-level-validation.json`: deterministic win/loss witnesses. Browser tests regenerate images; `npm run validate:level` regenerates the route record.
 
 ## CI and deployment
 
-`ci.yml` validates pushes/PRs and uploads browser failure diagnostics and screenshots. `pages.yml` is manual-only, runs all local checks, then deploys `dist` using GitHub Pages Actions. Once publication is authorized, push the branch, verify the exact commit's CI, enable Pages → GitHub Actions, and run the Pages workflow. Check the actual deployed `/shape-match/` URL and interactions before claiming a deployment works. Workflow configuration alone is not hosted evidence.
+CI runs frozen installation, TypeScript, unit/integration tests, production build and actual Chromium gameplay tests on pushes/PRs. It uploads traces, failure reports and screenshots. The manual Pages workflow repeats checks, uploads `dist`, then deploys through GitHub Pages Actions.
 
-G1 approval is required before playable G2 work. G2 review precedes full production; final acceptance remains the user's.
+G2 publication is explicitly authorized. After pushing the candidate and verifying CI, run `gh workflow run pages.yml --ref main` (or the workflow's Run control). Verify the deployment run and the actual `https://jaychtw.github.io/shape-match/` build and gameplay before claiming it works. API/Pages access may require the environment's allowed domains `api.github.com` and `jaychtw.github.io`; reuse platform authentication, never paste tokens in files or chat.
+
+**Stop for explicit G2 approval before G3.** No final product acceptance, physical-device certification or completed 15-level game is claimed.

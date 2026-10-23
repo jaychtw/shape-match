@@ -1,0 +1,309 @@
+{
+  "engine": "9863f8e023a227540a58491282e87d9f11a0cf79",
+  "level": {
+    "id": "g2-bright-beginning",
+    "seed": "shape-match-g2-bright",
+    "chapter": 1,
+    "number": 1,
+    "config": {
+      "rows": 8,
+      "cols": 8,
+      "pieceTypes": [
+        "circle",
+        "triangle",
+        "square",
+        "rectangle",
+        "pentagon",
+        "star"
+      ],
+      "objectives": [
+        {
+          "kind": "score",
+          "target": 1800
+        }
+      ],
+      "moveLimit": 18
+    },
+    "mechanic": "Swap adjacent shapes; create and activate specials; score through cascades.",
+    "difficulty": "Introductory vertical slice; human balance review pending."
+  },
+  "method": "Greedy one-turn engine simulations. Feasibility witness, not an exhaustive proof or human difficulty review.",
+  "routes": [
+    {
+      "policy": "maximize immediate score",
+      "status": "won",
+      "moves": 8,
+      "score": 2000,
+      "actions": [
+        {
+          "from": {
+            "row": 0,
+            "col": 3
+          },
+          "to": {
+            "row": 1,
+            "col": 3
+          }
+        },
+        {
+          "from": {
+            "row": 4,
+            "col": 6
+          },
+          "to": {
+            "row": 5,
+            "col": 6
+          }
+        },
+        {
+          "from": {
+            "row": 1,
+            "col": 6
+          },
+          "to": {
+            "row": 2,
+            "col": 6
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 5
+          },
+          "to": {
+            "row": 2,
+            "col": 6
+          }
+        },
+        {
+          "from": {
+            "row": 3,
+            "col": 1
+          },
+          "to": {
+            "row": 3,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 6,
+            "col": 2
+          },
+          "to": {
+            "row": 7,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 2
+          },
+          "to": {
+            "row": 3,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 7,
+            "col": 3
+          },
+          "to": {
+            "row": 7,
+            "col": 4
+          }
+        }
+      ]
+    },
+    {
+      "policy": "minimize immediate score",
+      "status": "lost",
+      "moves": 18,
+      "score": 540,
+      "actions": [
+        {
+          "from": {
+            "row": 0,
+            "col": 2
+          },
+          "to": {
+            "row": 1,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 3
+          },
+          "to": {
+            "row": 0,
+            "col": 4
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 2
+          },
+          "to": {
+            "row": 3,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 2
+          },
+          "to": {
+            "row": 1,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 3
+          },
+          "to": {
+            "row": 1,
+            "col": 3
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 3
+          },
+          "to": {
+            "row": 0,
+            "col": 4
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 4
+          },
+          "to": {
+            "row": 1,
+            "col": 4
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 4
+          },
+          "to": {
+            "row": 0,
+            "col": 5
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 5
+          },
+          "to": {
+            "row": 0,
+            "col": 6
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 4
+          },
+          "to": {
+            "row": 3,
+            "col": 4
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 2
+          },
+          "to": {
+            "row": 2,
+            "col": 3
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 1
+          },
+          "to": {
+            "row": 0,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 1,
+            "col": 2
+          },
+          "to": {
+            "row": 2,
+            "col": 2
+          }
+        },
+        {
+          "from": {
+            "row": 4,
+            "col": 4
+          },
+          "to": {
+            "row": 4,
+            "col": 5
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 4
+          },
+          "to": {
+            "row": 1,
+            "col": 4
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 2
+          },
+          "to": {
+            "row": 0,
+            "col": 3
+          }
+        },
+        {
+          "from": {
+            "row": 0,
+            "col": 6
+          },
+          "to": {
+            "row": 0,
+            "col": 7
+          }
+        },
+        {
+          "from": {
+            "row": 2,
+            "col": 2
+          },
+          "to": {
+            "row": 2,
+            "col": 3
+          }
+        }
+      ]
+    }
+  ]
+}

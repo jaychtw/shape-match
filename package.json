@@ -1,10 +1,10 @@
 {
   "name": "shape-match",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -12,7 +12,8 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "playwright test",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "validate:level": "node scripts/validate-level.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.1",

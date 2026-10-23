@@ -1,4 +1,4 @@
-name: Validate G1 foundation
+name: Validate G2 slice
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read

@@ -1,5 +1,5 @@
 name: Deploy approved preview to Pages
-# Manual publication; does not run automatically during G1 review.
+# Manual publication, authorized for G2 creative review.
 on:
   workflow_dispatch:
 permissions:
