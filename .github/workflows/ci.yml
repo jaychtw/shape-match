@@ -20,7 +20,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: g1-browser-evidence
+          name: g2-browser-evidence
           path: |
             playwright-report/
             test-results/
