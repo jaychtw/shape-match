@@ -11,7 +11,9 @@ concurrency:
   cancel-in-progress: false
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    container: mcr.microsoft.com/playwright:v1.58.2-noble@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,7 +24,6 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
       - run: npm run test:browser
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
@@ -32,14 +33,16 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: build
     steps:
       - uses: actions/deploy-pages@v4
         id: deployment
 
   verify-live:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    container: mcr.microsoft.com/playwright:v1.58.2-noble@sha256:6446946a1d9fd62d9ae501312a2d76a43ee688542b21622056a372959b65d63d
     needs: deploy
     steps:
       - uses: actions/checkout@v4
@@ -49,7 +52,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npx playwright install --with-deps chromium
       - run: npm run verify:live
       - uses: actions/upload-artifact@v4
         if: always()

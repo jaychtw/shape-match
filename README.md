@@ -38,6 +38,8 @@ English/繁體中文 switching preserves the active game. Reduced motion, langua
 
 ## CI and deployment
 
+Browser jobs use the official Playwright 1.58.2 Ubuntu 24.04 image pinned by manifest digest, with its matching preinstalled browser/dependencies, avoiding repeated apt/browser installation on moving runner images.
+
 CI runs frozen installation, TypeScript, unit/integration tests, production build and actual Chromium gameplay tests on pushes/PRs. It uploads traces, failure reports and screenshots. The manual Pages workflow repeats checks, uploads `dist`, then deploys through GitHub Pages Actions. A final hosted-browser job runs `npm run verify:live`: it verifies live asset hashes, desktop and touch gameplay, exact engine/DOM correspondence, reload/deterministic continuation and language persistence, and uploads a JSON report/screenshots.
 
 G2 publication is explicitly authorized. After pushing the candidate and verifying CI, run `gh workflow run pages.yml --ref main` (or the workflow's Run control). Verify the deployment run and the actual `https://jaychtw.github.io/shape-match/` build and gameplay before claiming it works. API/Pages access may require the environment's allowed domains `api.github.com` and `jaychtw.github.io`; reuse platform authentication, never paste tokens in files or chat.
