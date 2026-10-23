@@ -42,12 +42,18 @@ let handledControlTap:{x:number;y:number;until:number}|null=null;
 // A touch-generated native click can be retargeted to newly rendered controls.
 // Suppress that one trailing click; real mouse pointerdown and keyboard remain native.
 app.addEventListener('click',event=>{
- if(!handledControlTap||!event.isTrusted||event.detail===0||performance.now()>handledControlTap.until)return;
- if(Math.hypot(event.clientX-handledControlTap.x,event.clientY-handledControlTap.y)>24)return;
+ if(!event.isTrusted)return; // Explicit pointerup activation uses HTMLElement.click().
+ const target=event.target as Element;
+ const control=target.closest('button,input[type=checkbox]')??target.closest('label')?.querySelector('input[type=checkbox]');
+ const source=event as MouseEvent&{sourceCapabilities?:{firesTouchEvents:boolean}};
+ const nativeTouch=(event as PointerEvent).pointerType==='touch'||source.sourceCapabilities?.firesTouchEvents===true;
+ const handledControl=nativeTouch&&control&&!control.closest('.board');
+ const trailing=handledControlTap&&event.detail!==0&&performance.now()<=handledControlTap.until&&Math.hypot(event.clientX-handledControlTap.x,event.clientY-handledControlTap.y)<=24;
+ if(!handledControl&&!trailing)return;
  handledControlTap=null;event.preventDefault();event.stopImmediatePropagation();
 },true);
 app.addEventListener('pointerdown',event=>{
- if(event.pointerType==='mouse')handledControlTap=null;
+ handledControlTap=null; // A fresh physical gesture owns its own activation.
  if(event.pointerType!=='touch'||!event.isPrimary)return;
  const target=event.target as Element;
  if(target.closest('.board'))return;
