@@ -1,5 +1,5 @@
 name: Deploy approved preview to Pages
-# Manual publication, authorized for G2 creative review.
+# Manual publication, authorized for G5 creative review.
 on:
   workflow_dispatch:
 permissions:
@@ -24,7 +24,8 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - run: npm run test:browser
+      - run: npm run test:browser -- --workers=3
+      - run: npm run test:compat
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -56,5 +57,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: g2-live-verification
+          name: g4-live-verification
           path: test-results/live/

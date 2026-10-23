@@ -1,0 +1,6489 @@
+{
+  "engine": "9863f8e023a227540a58491282e87d9f11a0cf79",
+  "version": 1,
+  "chapters": 3,
+  "levels": [
+    {
+      "level": {
+        "id": "g2-bright-beginning",
+        "seed": "shape-match-g2-bright",
+        "chapter": 1,
+        "number": 1,
+        "titleKey": "level1",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 1800
+            }
+          ],
+          "moveLimit": 18
+        },
+        "mechanic": "Adjacent swaps, matching, scoring and invalid-swap recovery.",
+        "difficulty": "Introductory; the approved G2 level is retained unchanged."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 1800
+          }
+        ],
+        "moveLimit": 18,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "shape-match-g2-bright",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":1800}],\"moveLimit\":18,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"star\",\"special\":null},{\"id\":2,\"type\":\"pentagon\",\"special\":null},{\"id\":3,\"type\":\"circle\",\"special\":null},{\"id\":4,\"type\":\"triangle\",\"special\":null},{\"id\":5,\"type\":\"pentagon\",\"special\":null},{\"id\":6,\"type\":\"circle\",\"special\":null},{\"id\":7,\"type\":\"square\",\"special\":null},{\"id\":8,\"type\":\"pentagon\",\"special\":null}],[{\"id\":9,\"type\":\"circle\",\"special\":null},{\"id\":10,\"type\":\"circle\",\"special\":null},{\"id\":11,\"type\":\"star\",\"special\":null},{\"id\":12,\"type\":\"rectangle\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"triangle\",\"special\":null},{\"id\":15,\"type\":\"rectangle\",\"special\":null},{\"id\":16,\"type\":\"circle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"pentagon\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"triangle\",\"special\":null},{\"id\":23,\"type\":\"rectangle\",\"special\":null},{\"id\":24,\"type\":\"square\",\"special\":null}],[{\"id\":25,\"type\":\"star\",\"special\":null},{\"id\":26,\"type\":\"rectangle\",\"special\":null},{\"id\":27,\"type\":\"pentagon\",\"special\":null},{\"id\":28,\"type\":\"star\",\"special\":null},{\"id\":29,\"type\":\"rectangle\",\"special\":null},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"square\",\"special\":null},{\"id\":32,\"type\":\"triangle\",\"special\":null}],[{\"id\":33,\"type\":\"pentagon\",\"special\":null},{\"id\":34,\"type\":\"circle\",\"special\":null},{\"id\":35,\"type\":\"rectangle\",\"special\":null},{\"id\":36,\"type\":\"rectangle\",\"special\":null},{\"id\":37,\"type\":\"star\",\"special\":null},{\"id\":38,\"type\":\"square\",\"special\":null},{\"id\":39,\"type\":\"circle\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"pentagon\",\"special\":null},{\"id\":42,\"type\":\"circle\",\"special\":null},{\"id\":43,\"type\":\"star\",\"special\":null},{\"id\":44,\"type\":\"square\",\"special\":null},{\"id\":45,\"type\":\"star\",\"special\":null},{\"id\":46,\"type\":\"pentagon\",\"special\":null},{\"id\":47,\"type\":\"triangle\",\"special\":null},{\"id\":48,\"type\":\"square\",\"special\":null}],[{\"id\":49,\"type\":\"triangle\",\"special\":null},{\"id\":50,\"type\":\"star\",\"special\":null},{\"id\":51,\"type\":\"rectangle\",\"special\":null},{\"id\":52,\"type\":\"star\",\"special\":null},{\"id\":53,\"type\":\"pentagon\",\"special\":null},{\"id\":54,\"type\":\"pentagon\",\"special\":null},{\"id\":55,\"type\":\"circle\",\"special\":null},{\"id\":56,\"type\":\"square\",\"special\":null}],[{\"id\":57,\"type\":\"triangle\",\"special\":null},{\"id\":58,\"type\":\"star\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"rectangle\",\"special\":null},{\"id\":61,\"type\":\"rectangle\",\"special\":null},{\"id\":62,\"type\":\"circle\",\"special\":null},{\"id\":63,\"type\":\"circle\",\"special\":null},{\"id\":64,\"type\":\"rectangle\",\"special\":null}]],\"rng\":1978532789,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 8,
+        "score": 2000,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 1800
+            },
+            "current": 2000,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 1
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 2
+            },
+            "to": {
+              "row": 7,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 3
+            },
+            "to": {
+              "row": 7,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 18,
+        "score": 540,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 1800
+            },
+            "current": 540,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "coral-connections",
+        "seed": "sm-v1-coral-02",
+        "chapter": 1,
+        "number": 2,
+        "titleKey": "level2",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 18
+            }
+          ],
+          "moveLimit": 18
+        },
+        "mechanic": "Choose matches of a particular silhouette.",
+        "difficulty": "Gentle targeted collection."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "clear",
+            "types": [
+              "circle"
+            ],
+            "target": 18
+          }
+        ],
+        "moveLimit": 18,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-coral-02",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"clear\",\"types\":[\"circle\"],\"target\":18}],\"moveLimit\":18,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"pentagon\",\"special\":null},{\"id\":2,\"type\":\"triangle\",\"special\":null},{\"id\":3,\"type\":\"triangle\",\"special\":null},{\"id\":4,\"type\":\"circle\",\"special\":null},{\"id\":5,\"type\":\"circle\",\"special\":null},{\"id\":6,\"type\":\"pentagon\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"triangle\",\"special\":null}],[{\"id\":9,\"type\":\"triangle\",\"special\":null},{\"id\":10,\"type\":\"triangle\",\"special\":null},{\"id\":11,\"type\":\"pentagon\",\"special\":null},{\"id\":12,\"type\":\"pentagon\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"triangle\",\"special\":null},{\"id\":15,\"type\":\"circle\",\"special\":null},{\"id\":16,\"type\":\"square\",\"special\":null}],[{\"id\":17,\"type\":\"star\",\"special\":null},{\"id\":18,\"type\":\"star\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"square\",\"special\":null},{\"id\":22,\"type\":\"rectangle\",\"special\":null},{\"id\":23,\"type\":\"circle\",\"special\":null},{\"id\":24,\"type\":\"circle\",\"special\":null}],[{\"id\":25,\"type\":\"pentagon\",\"special\":null},{\"id\":26,\"type\":\"star\",\"special\":null},{\"id\":27,\"type\":\"triangle\",\"special\":null},{\"id\":28,\"type\":\"pentagon\",\"special\":null},{\"id\":29,\"type\":\"circle\",\"special\":null},{\"id\":30,\"type\":\"circle\",\"special\":null},{\"id\":31,\"type\":\"pentagon\",\"special\":null},{\"id\":32,\"type\":\"triangle\",\"special\":null}],[{\"id\":33,\"type\":\"rectangle\",\"special\":null},{\"id\":34,\"type\":\"rectangle\",\"special\":null},{\"id\":35,\"type\":\"star\",\"special\":null},{\"id\":36,\"type\":\"star\",\"special\":null},{\"id\":37,\"type\":\"triangle\",\"special\":null},{\"id\":38,\"type\":\"circle\",\"special\":null},{\"id\":39,\"type\":\"rectangle\",\"special\":null},{\"id\":40,\"type\":\"triangle\",\"special\":null}],[{\"id\":41,\"type\":\"rectangle\",\"special\":null},{\"id\":42,\"type\":\"triangle\",\"special\":null},{\"id\":43,\"type\":\"square\",\"special\":null},{\"id\":44,\"type\":\"star\",\"special\":null},{\"id\":45,\"type\":\"pentagon\",\"special\":null},{\"id\":46,\"type\":\"pentagon\",\"special\":null},{\"id\":47,\"type\":\"circle\",\"special\":null},{\"id\":48,\"type\":\"rectangle\",\"special\":null}],[{\"id\":49,\"type\":\"triangle\",\"special\":null},{\"id\":50,\"type\":\"pentagon\",\"special\":null},{\"id\":51,\"type\":\"star\",\"special\":null},{\"id\":52,\"type\":\"square\",\"special\":null},{\"id\":53,\"type\":\"circle\",\"special\":null},{\"id\":54,\"type\":\"star\",\"special\":null},{\"id\":55,\"type\":\"triangle\",\"special\":null},{\"id\":56,\"type\":\"star\",\"special\":null}],[{\"id\":57,\"type\":\"pentagon\",\"special\":null},{\"id\":58,\"type\":\"triangle\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"square\",\"special\":null},{\"id\":61,\"type\":\"circle\",\"special\":null},{\"id\":62,\"type\":\"square\",\"special\":null},{\"id\":63,\"type\":\"circle\",\"special\":null},{\"id\":64,\"type\":\"rectangle\",\"special\":null}]],\"rng\":2334395620,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 4,
+        "score": 1260,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 18
+            },
+            "current": 18,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 18,
+        "score": 720,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 18
+            },
+            "current": 6,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 0
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 1
+            },
+            "to": {
+              "row": 7,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 1
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "golden-route",
+        "seed": "sm-v1-golden-03",
+        "chapter": 1,
+        "number": 3,
+        "titleKey": "level3",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 1100
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "triangle"
+              ],
+              "target": 12
+            }
+          ],
+          "moveLimit": 20
+        },
+        "mechanic": "Read and satisfy two simultaneous objectives.",
+        "difficulty": "Gentle planning; score and collection together."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 1100
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "triangle"
+            ],
+            "target": 12
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-golden-03",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":1100},{\"kind\":\"clear\",\"types\":[\"triangle\"],\"target\":12}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"rectangle\",\"special\":null},{\"id\":2,\"type\":\"triangle\",\"special\":null},{\"id\":3,\"type\":\"square\",\"special\":null},{\"id\":4,\"type\":\"pentagon\",\"special\":null},{\"id\":5,\"type\":\"star\",\"special\":null},{\"id\":6,\"type\":\"square\",\"special\":null},{\"id\":7,\"type\":\"circle\",\"special\":null},{\"id\":8,\"type\":\"square\",\"special\":null}],[{\"id\":9,\"type\":\"rectangle\",\"special\":null},{\"id\":10,\"type\":\"star\",\"special\":null},{\"id\":11,\"type\":\"triangle\",\"special\":null},{\"id\":12,\"type\":\"rectangle\",\"special\":null},{\"id\":13,\"type\":\"star\",\"special\":null},{\"id\":14,\"type\":\"rectangle\",\"special\":null},{\"id\":15,\"type\":\"square\",\"special\":null},{\"id\":16,\"type\":\"triangle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"star\",\"special\":null},{\"id\":23,\"type\":\"rectangle\",\"special\":null},{\"id\":24,\"type\":\"pentagon\",\"special\":null}],[{\"id\":25,\"type\":\"square\",\"special\":null},{\"id\":26,\"type\":\"triangle\",\"special\":null},{\"id\":27,\"type\":\"square\",\"special\":null},{\"id\":28,\"type\":\"triangle\",\"special\":null},{\"id\":29,\"type\":\"square\",\"special\":null},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"star\",\"special\":null},{\"id\":32,\"type\":\"rectangle\",\"special\":null}],[{\"id\":33,\"type\":\"circle\",\"special\":null},{\"id\":34,\"type\":\"star\",\"special\":null},{\"id\":35,\"type\":\"rectangle\",\"special\":null},{\"id\":36,\"type\":\"star\",\"special\":null},{\"id\":37,\"type\":\"circle\",\"special\":null},{\"id\":38,\"type\":\"pentagon\",\"special\":null},{\"id\":39,\"type\":\"star\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"star\",\"special\":null},{\"id\":42,\"type\":\"circle\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"rectangle\",\"special\":null},{\"id\":45,\"type\":\"triangle\",\"special\":null},{\"id\":46,\"type\":\"square\",\"special\":null},{\"id\":47,\"type\":\"pentagon\",\"special\":null},{\"id\":48,\"type\":\"pentagon\",\"special\":null}],[{\"id\":49,\"type\":\"pentagon\",\"special\":null},{\"id\":50,\"type\":\"circle\",\"special\":null},{\"id\":51,\"type\":\"circle\",\"special\":null},{\"id\":52,\"type\":\"triangle\",\"special\":null},{\"id\":53,\"type\":\"square\",\"special\":null},{\"id\":54,\"type\":\"triangle\",\"special\":null},{\"id\":55,\"type\":\"circle\",\"special\":null},{\"id\":56,\"type\":\"star\",\"special\":null}],[{\"id\":57,\"type\":\"star\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"pentagon\",\"special\":null},{\"id\":60,\"type\":\"triangle\",\"special\":null},{\"id\":61,\"type\":\"square\",\"special\":null},{\"id\":62,\"type\":\"square\",\"special\":null},{\"id\":63,\"type\":\"triangle\",\"special\":null},{\"id\":64,\"type\":\"pentagon\",\"special\":null}]],\"rng\":3346015798,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 7,
+        "score": 1120,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 1100
+            },
+            "current": 1120,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "triangle"
+              ],
+              "target": 12
+            },
+            "current": 12,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 7
+            },
+            "to": {
+              "row": 6,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 600,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 1100
+            },
+            "current": 600,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "triangle"
+              ],
+              "target": 12
+            },
+            "current": 3,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 0
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 0
+            },
+            "to": {
+              "row": 7,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 7,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "blue-and-mint",
+        "seed": "sm-v1-mint-04",
+        "chapter": 1,
+        "number": 4,
+        "titleKey": "level4",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 28
+            }
+          ],
+          "moveLimit": 20
+        },
+        "mechanic": "Distinguish square and rectangle; either contributes to the same collection.",
+        "difficulty": "Target selection with two useful silhouettes."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "clear",
+            "types": [
+              "square",
+              "rectangle"
+            ],
+            "target": 28
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-mint-04",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"clear\",\"types\":[\"square\",\"rectangle\"],\"target\":28}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"star\",\"special\":null},{\"id\":2,\"type\":\"pentagon\",\"special\":null},{\"id\":3,\"type\":\"rectangle\",\"special\":null},{\"id\":4,\"type\":\"circle\",\"special\":null},{\"id\":5,\"type\":\"star\",\"special\":null},{\"id\":6,\"type\":\"square\",\"special\":null},{\"id\":7,\"type\":\"square\",\"special\":null},{\"id\":8,\"type\":\"circle\",\"special\":null}],[{\"id\":9,\"type\":\"star\",\"special\":null},{\"id\":10,\"type\":\"square\",\"special\":null},{\"id\":11,\"type\":\"triangle\",\"special\":null},{\"id\":12,\"type\":\"square\",\"special\":null},{\"id\":13,\"type\":\"square\",\"special\":null},{\"id\":14,\"type\":\"circle\",\"special\":null},{\"id\":15,\"type\":\"circle\",\"special\":null},{\"id\":16,\"type\":\"rectangle\",\"special\":null}],[{\"id\":17,\"type\":\"pentagon\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"pentagon\",\"special\":null},{\"id\":20,\"type\":\"circle\",\"special\":null},{\"id\":21,\"type\":\"star\",\"special\":null},{\"id\":22,\"type\":\"square\",\"special\":null},{\"id\":23,\"type\":\"circle\",\"special\":null},{\"id\":24,\"type\":\"rectangle\",\"special\":null}],[{\"id\":25,\"type\":\"triangle\",\"special\":null},{\"id\":26,\"type\":\"circle\",\"special\":null},{\"id\":27,\"type\":\"rectangle\",\"special\":null},{\"id\":28,\"type\":\"circle\",\"special\":null},{\"id\":29,\"type\":\"rectangle\",\"special\":null},{\"id\":30,\"type\":\"star\",\"special\":null},{\"id\":31,\"type\":\"pentagon\",\"special\":null},{\"id\":32,\"type\":\"triangle\",\"special\":null}],[{\"id\":33,\"type\":\"circle\",\"special\":null},{\"id\":34,\"type\":\"star\",\"special\":null},{\"id\":35,\"type\":\"rectangle\",\"special\":null},{\"id\":36,\"type\":\"star\",\"special\":null},{\"id\":37,\"type\":\"pentagon\",\"special\":null},{\"id\":38,\"type\":\"pentagon\",\"special\":null},{\"id\":39,\"type\":\"circle\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"star\",\"special\":null},{\"id\":42,\"type\":\"star\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"star\",\"special\":null},{\"id\":45,\"type\":\"star\",\"special\":null},{\"id\":46,\"type\":\"circle\",\"special\":null},{\"id\":47,\"type\":\"pentagon\",\"special\":null},{\"id\":48,\"type\":\"star\",\"special\":null}],[{\"id\":49,\"type\":\"star\",\"special\":null},{\"id\":50,\"type\":\"square\",\"special\":null},{\"id\":51,\"type\":\"square\",\"special\":null},{\"id\":52,\"type\":\"pentagon\",\"special\":null},{\"id\":53,\"type\":\"pentagon\",\"special\":null},{\"id\":54,\"type\":\"circle\",\"special\":null},{\"id\":55,\"type\":\"pentagon\",\"special\":null},{\"id\":56,\"type\":\"star\",\"special\":null}],[{\"id\":57,\"type\":\"circle\",\"special\":null},{\"id\":58,\"type\":\"circle\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"pentagon\",\"special\":null},{\"id\":61,\"type\":\"rectangle\",\"special\":null},{\"id\":62,\"type\":\"pentagon\",\"special\":null},{\"id\":63,\"type\":\"star\",\"special\":null},{\"id\":64,\"type\":\"circle\",\"special\":null}]],\"rng\":459453889,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 6,
+        "score": 1900,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 28
+            },
+            "current": 30,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 7,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 690,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 28
+            },
+            "current": 12,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 0
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 5
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 7,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "first-finale",
+        "seed": "sm-v1-finale-05",
+        "chapter": 1,
+        "number": 5,
+        "titleKey": "level5",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 2400
+            }
+          ],
+          "moveLimit": 22
+        },
+        "mechanic": "Plan beyond the first match and notice cascades.",
+        "difficulty": "Chapter review with room to experiment."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 2400
+          }
+        ],
+        "moveLimit": 22,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-finale-05",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":2400}],\"moveLimit\":22,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"square\",\"special\":null},{\"id\":2,\"type\":\"circle\",\"special\":null},{\"id\":3,\"type\":\"circle\",\"special\":null},{\"id\":4,\"type\":\"square\",\"special\":null},{\"id\":5,\"type\":\"circle\",\"special\":null},{\"id\":6,\"type\":\"triangle\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"pentagon\",\"special\":null}],[{\"id\":9,\"type\":\"triangle\",\"special\":null},{\"id\":10,\"type\":\"circle\",\"special\":null},{\"id\":11,\"type\":\"square\",\"special\":null},{\"id\":12,\"type\":\"triangle\",\"special\":null},{\"id\":13,\"type\":\"rectangle\",\"special\":null},{\"id\":14,\"type\":\"square\",\"special\":null},{\"id\":15,\"type\":\"pentagon\",\"special\":null},{\"id\":16,\"type\":\"rectangle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"rectangle\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"triangle\",\"special\":null},{\"id\":21,\"type\":\"circle\",\"special\":null},{\"id\":22,\"type\":\"circle\",\"special\":null},{\"id\":23,\"type\":\"square\",\"special\":null},{\"id\":24,\"type\":\"triangle\",\"special\":null}],[{\"id\":25,\"type\":\"square\",\"special\":null},{\"id\":26,\"type\":\"rectangle\",\"special\":null},{\"id\":27,\"type\":\"rectangle\",\"special\":null},{\"id\":28,\"type\":\"pentagon\",\"special\":null},{\"id\":29,\"type\":\"circle\",\"special\":null},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"rectangle\",\"special\":null},{\"id\":32,\"type\":\"square\",\"special\":null}],[{\"id\":33,\"type\":\"star\",\"special\":null},{\"id\":34,\"type\":\"star\",\"special\":null},{\"id\":35,\"type\":\"circle\",\"special\":null},{\"id\":36,\"type\":\"circle\",\"special\":null},{\"id\":37,\"type\":\"square\",\"special\":null},{\"id\":38,\"type\":\"rectangle\",\"special\":null},{\"id\":39,\"type\":\"star\",\"special\":null},{\"id\":40,\"type\":\"square\",\"special\":null}],[{\"id\":41,\"type\":\"square\",\"special\":null},{\"id\":42,\"type\":\"rectangle\",\"special\":null},{\"id\":43,\"type\":\"pentagon\",\"special\":null},{\"id\":44,\"type\":\"square\",\"special\":null},{\"id\":45,\"type\":\"rectangle\",\"special\":null},{\"id\":46,\"type\":\"triangle\",\"special\":null},{\"id\":47,\"type\":\"rectangle\",\"special\":null},{\"id\":48,\"type\":\"triangle\",\"special\":null}],[{\"id\":49,\"type\":\"circle\",\"special\":null},{\"id\":50,\"type\":\"triangle\",\"special\":null},{\"id\":51,\"type\":\"triangle\",\"special\":null},{\"id\":52,\"type\":\"circle\",\"special\":null},{\"id\":53,\"type\":\"circle\",\"special\":null},{\"id\":54,\"type\":\"star\",\"special\":null},{\"id\":55,\"type\":\"pentagon\",\"special\":null},{\"id\":56,\"type\":\"circle\",\"special\":null}],[{\"id\":57,\"type\":\"circle\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"rectangle\",\"special\":null},{\"id\":60,\"type\":\"circle\",\"special\":null},{\"id\":61,\"type\":\"pentagon\",\"special\":null},{\"id\":62,\"type\":\"star\",\"special\":null},{\"id\":63,\"type\":\"circle\",\"special\":null},{\"id\":64,\"type\":\"triangle\",\"special\":null}]],\"rng\":1379018251,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "Beam search width 8; normalized engine objectives and score",
+        "status": "won",
+        "moves": 7,
+        "score": 2530,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2400
+            },
+            "current": 2530,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 0
+            },
+            "to": {
+              "row": 3,
+              "col": 0
+            }
+          }
+        ],
+        "failures": 0,
+        "simulations": 1069
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 22,
+        "score": 750,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2400
+            },
+            "current": 750,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 7
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 7
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 5
+            },
+            "to": {
+              "row": 6,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "across-the-sky",
+        "seed": "sm-v1-line-h-06",
+        "chapter": 2,
+        "number": 6,
+        "titleKey": "level6",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 2000
+            }
+          ],
+          "moveLimit": 16
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "horizontal"
+          }
+        ],
+        "mechanic": "A marked horizontal piece starts on the board; swap it to activate a row.",
+        "difficulty": "Supported introduction to horizontal line power."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 2000
+          }
+        ],
+        "moveLimit": 16,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-line-h-06",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":2000}],\"moveLimit\":16,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"circle\",\"special\":null},{\"id\":2,\"type\":\"triangle\",\"special\":null},{\"id\":3,\"type\":\"triangle\",\"special\":null},{\"id\":4,\"type\":\"rectangle\",\"special\":null},{\"id\":5,\"type\":\"rectangle\",\"special\":null},{\"id\":6,\"type\":\"triangle\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"circle\",\"special\":null}],[{\"id\":9,\"type\":\"pentagon\",\"special\":null},{\"id\":10,\"type\":\"circle\",\"special\":null},{\"id\":11,\"type\":\"triangle\",\"special\":null},{\"id\":12,\"type\":\"square\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"circle\",\"special\":null},{\"id\":15,\"type\":\"square\",\"special\":null},{\"id\":16,\"type\":\"circle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"rectangle\",\"special\":null},{\"id\":19,\"type\":\"square\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"circle\",\"special\":null},{\"id\":22,\"type\":\"pentagon\",\"special\":null},{\"id\":23,\"type\":\"square\",\"special\":null},{\"id\":24,\"type\":\"star\",\"special\":null}],[{\"id\":25,\"type\":\"square\",\"special\":null},{\"id\":26,\"type\":\"star\",\"special\":null},{\"id\":27,\"type\":\"pentagon\",\"special\":null},{\"id\":28,\"type\":\"circle\",\"special\":\"horizontal\"},{\"id\":29,\"type\":\"star\",\"special\":null},{\"id\":30,\"type\":\"rectangle\",\"special\":null},{\"id\":31,\"type\":\"star\",\"special\":null},{\"id\":32,\"type\":\"pentagon\",\"special\":null}],[{\"id\":33,\"type\":\"square\",\"special\":null},{\"id\":34,\"type\":\"star\",\"special\":null},{\"id\":35,\"type\":\"triangle\",\"special\":null},{\"id\":36,\"type\":\"rectangle\",\"special\":null},{\"id\":37,\"type\":\"square\",\"special\":null},{\"id\":38,\"type\":\"star\",\"special\":null},{\"id\":39,\"type\":\"square\",\"special\":null},{\"id\":40,\"type\":\"square\",\"special\":null}],[{\"id\":41,\"type\":\"pentagon\",\"special\":null},{\"id\":42,\"type\":\"rectangle\",\"special\":null},{\"id\":43,\"type\":\"rectangle\",\"special\":null},{\"id\":44,\"type\":\"square\",\"special\":null},{\"id\":45,\"type\":\"triangle\",\"special\":null},{\"id\":46,\"type\":\"circle\",\"special\":null},{\"id\":47,\"type\":\"square\",\"special\":null},{\"id\":48,\"type\":\"pentagon\",\"special\":null}],[{\"id\":49,\"type\":\"circle\",\"special\":null},{\"id\":50,\"type\":\"triangle\",\"special\":null},{\"id\":51,\"type\":\"pentagon\",\"special\":null},{\"id\":52,\"type\":\"rectangle\",\"special\":null},{\"id\":53,\"type\":\"circle\",\"special\":null},{\"id\":54,\"type\":\"circle\",\"special\":null},{\"id\":55,\"type\":\"star\",\"special\":null},{\"id\":56,\"type\":\"rectangle\",\"special\":null}],[{\"id\":57,\"type\":\"star\",\"special\":null},{\"id\":58,\"type\":\"pentagon\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"triangle\",\"special\":null},{\"id\":61,\"type\":\"pentagon\",\"special\":null},{\"id\":62,\"type\":\"star\",\"special\":null},{\"id\":63,\"type\":\"circle\",\"special\":null},{\"id\":64,\"type\":\"rectangle\",\"special\":null}]],\"rng\":2249174936,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 10,
+        "score": 2100,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2000
+            },
+            "current": 2100,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 7
+            },
+            "to": {
+              "row": 3,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 16,
+        "score": 480,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2000
+            },
+            "current": 480,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 7
+            },
+            "to": {
+              "row": 3,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 0,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "mint-columns",
+        "seed": "sm-v1-line-v-07",
+        "chapter": 2,
+        "number": 7,
+        "titleKey": "level7",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 42
+            }
+          ],
+          "moveLimit": 18
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 4,
+            "special": "vertical"
+          }
+        ],
+        "mechanic": "A vertical line starts on the board; aim collection along its column.",
+        "difficulty": "Targeted collection with vertical power."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "clear",
+            "types": [
+              "square",
+              "rectangle"
+            ],
+            "target": 42
+          }
+        ],
+        "moveLimit": 18,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-line-v-07",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"clear\",\"types\":[\"square\",\"rectangle\"],\"target\":42}],\"moveLimit\":18,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"rectangle\",\"special\":null},{\"id\":2,\"type\":\"rectangle\",\"special\":null},{\"id\":3,\"type\":\"star\",\"special\":null},{\"id\":4,\"type\":\"star\",\"special\":null},{\"id\":5,\"type\":\"triangle\",\"special\":null},{\"id\":6,\"type\":\"star\",\"special\":null},{\"id\":7,\"type\":\"square\",\"special\":null},{\"id\":8,\"type\":\"pentagon\",\"special\":null}],[{\"id\":9,\"type\":\"square\",\"special\":null},{\"id\":10,\"type\":\"pentagon\",\"special\":null},{\"id\":11,\"type\":\"pentagon\",\"special\":null},{\"id\":12,\"type\":\"triangle\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"rectangle\",\"special\":null},{\"id\":15,\"type\":\"triangle\",\"special\":null},{\"id\":16,\"type\":\"triangle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"triangle\",\"special\":null},{\"id\":21,\"type\":\"circle\",\"special\":null},{\"id\":22,\"type\":\"pentagon\",\"special\":null},{\"id\":23,\"type\":\"circle\",\"special\":null},{\"id\":24,\"type\":\"triangle\",\"special\":null}],[{\"id\":25,\"type\":\"square\",\"special\":null},{\"id\":26,\"type\":\"pentagon\",\"special\":null},{\"id\":27,\"type\":\"star\",\"special\":null},{\"id\":28,\"type\":\"square\",\"special\":null},{\"id\":29,\"type\":\"rectangle\",\"special\":\"vertical\"},{\"id\":30,\"type\":\"star\",\"special\":null},{\"id\":31,\"type\":\"rectangle\",\"special\":null},{\"id\":32,\"type\":\"rectangle\",\"special\":null}],[{\"id\":33,\"type\":\"triangle\",\"special\":null},{\"id\":34,\"type\":\"star\",\"special\":null},{\"id\":35,\"type\":\"circle\",\"special\":null},{\"id\":36,\"type\":\"circle\",\"special\":null},{\"id\":37,\"type\":\"square\",\"special\":null},{\"id\":38,\"type\":\"star\",\"special\":null},{\"id\":39,\"type\":\"pentagon\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"circle\",\"special\":null},{\"id\":42,\"type\":\"triangle\",\"special\":null},{\"id\":43,\"type\":\"pentagon\",\"special\":null},{\"id\":44,\"type\":\"pentagon\",\"special\":null},{\"id\":45,\"type\":\"triangle\",\"special\":null},{\"id\":46,\"type\":\"rectangle\",\"special\":null},{\"id\":47,\"type\":\"star\",\"special\":null},{\"id\":48,\"type\":\"triangle\",\"special\":null}],[{\"id\":49,\"type\":\"square\",\"special\":null},{\"id\":50,\"type\":\"pentagon\",\"special\":null},{\"id\":51,\"type\":\"pentagon\",\"special\":null},{\"id\":52,\"type\":\"circle\",\"special\":null},{\"id\":53,\"type\":\"pentagon\",\"special\":null},{\"id\":54,\"type\":\"rectangle\",\"special\":null},{\"id\":55,\"type\":\"pentagon\",\"special\":null},{\"id\":56,\"type\":\"rectangle\",\"special\":null}],[{\"id\":57,\"type\":\"star\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"square\",\"special\":null},{\"id\":60,\"type\":\"triangle\",\"special\":null},{\"id\":61,\"type\":\"star\",\"special\":null},{\"id\":62,\"type\":\"circle\",\"special\":null},{\"id\":63,\"type\":\"star\",\"special\":null},{\"id\":64,\"type\":\"square\",\"special\":null}]],\"rng\":1901746323,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 9,
+        "score": 2520,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 42
+            },
+            "current": 47,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 6,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 7
+            },
+            "to": {
+              "row": 5,
+              "col": 7
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 18,
+        "score": 540,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "square",
+                "rectangle"
+              ],
+              "target": 42
+            },
+            "current": 15,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 0
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "violet-burst",
+        "seed": "sm-v1-bomb-08",
+        "chapter": 2,
+        "number": 8,
+        "titleKey": "level8",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 2400
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "star"
+              ],
+              "target": 15
+            }
+          ],
+          "moveLimit": 20
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "bomb"
+          }
+        ],
+        "mechanic": "A bomb starts on the board; its local burst can trigger neighboring specials.",
+        "difficulty": "Two goals with a supplied area effect."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 2400
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "star"
+            ],
+            "target": 15
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-bomb-08",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":2400},{\"kind\":\"clear\",\"types\":[\"star\"],\"target\":15}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"triangle\",\"special\":null},{\"id\":2,\"type\":\"pentagon\",\"special\":null},{\"id\":3,\"type\":\"pentagon\",\"special\":null},{\"id\":4,\"type\":\"circle\",\"special\":null},{\"id\":5,\"type\":\"square\",\"special\":null},{\"id\":6,\"type\":\"rectangle\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"circle\",\"special\":null}],[{\"id\":9,\"type\":\"triangle\",\"special\":null},{\"id\":10,\"type\":\"star\",\"special\":null},{\"id\":11,\"type\":\"star\",\"special\":null},{\"id\":12,\"type\":\"square\",\"special\":null},{\"id\":13,\"type\":\"star\",\"special\":null},{\"id\":14,\"type\":\"circle\",\"special\":null},{\"id\":15,\"type\":\"triangle\",\"special\":null},{\"id\":16,\"type\":\"star\",\"special\":null}],[{\"id\":17,\"type\":\"pentagon\",\"special\":null},{\"id\":18,\"type\":\"circle\",\"special\":null},{\"id\":19,\"type\":\"circle\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"pentagon\",\"special\":null},{\"id\":23,\"type\":\"rectangle\",\"special\":null},{\"id\":24,\"type\":\"triangle\",\"special\":null}],[{\"id\":25,\"type\":\"square\",\"special\":null},{\"id\":26,\"type\":\"circle\",\"special\":null},{\"id\":27,\"type\":\"pentagon\",\"special\":null},{\"id\":28,\"type\":\"star\",\"special\":\"bomb\"},{\"id\":29,\"type\":\"circle\",\"special\":null},{\"id\":30,\"type\":\"triangle\",\"special\":null},{\"id\":31,\"type\":\"pentagon\",\"special\":null},{\"id\":32,\"type\":\"square\",\"special\":null}],[{\"id\":33,\"type\":\"pentagon\",\"special\":null},{\"id\":34,\"type\":\"triangle\",\"special\":null},{\"id\":35,\"type\":\"pentagon\",\"special\":null},{\"id\":36,\"type\":\"triangle\",\"special\":null},{\"id\":37,\"type\":\"star\",\"special\":null},{\"id\":38,\"type\":\"square\",\"special\":null},{\"id\":39,\"type\":\"star\",\"special\":null},{\"id\":40,\"type\":\"star\",\"special\":null}],[{\"id\":41,\"type\":\"rectangle\",\"special\":null},{\"id\":42,\"type\":\"rectangle\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"circle\",\"special\":null},{\"id\":45,\"type\":\"circle\",\"special\":null},{\"id\":46,\"type\":\"rectangle\",\"special\":null},{\"id\":47,\"type\":\"triangle\",\"special\":null},{\"id\":48,\"type\":\"circle\",\"special\":null}],[{\"id\":49,\"type\":\"rectangle\",\"special\":null},{\"id\":50,\"type\":\"star\",\"special\":null},{\"id\":51,\"type\":\"rectangle\",\"special\":null},{\"id\":52,\"type\":\"rectangle\",\"special\":null},{\"id\":53,\"type\":\"triangle\",\"special\":null},{\"id\":54,\"type\":\"square\",\"special\":null},{\"id\":55,\"type\":\"pentagon\",\"special\":null},{\"id\":56,\"type\":\"circle\",\"special\":null}],[{\"id\":57,\"type\":\"pentagon\",\"special\":null},{\"id\":58,\"type\":\"circle\",\"special\":null},{\"id\":59,\"type\":\"star\",\"special\":null},{\"id\":60,\"type\":\"pentagon\",\"special\":null},{\"id\":61,\"type\":\"triangle\",\"special\":null},{\"id\":62,\"type\":\"circle\",\"special\":null},{\"id\":63,\"type\":\"square\",\"special\":null},{\"id\":64,\"type\":\"triangle\",\"special\":null}]],\"rng\":814706897,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 8,
+        "score": 2710,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2400
+            },
+            "current": 2710,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "star"
+              ],
+              "target": 15
+            },
+            "current": 18,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 800,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 2400
+            },
+            "current": 800,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "star"
+              ],
+              "target": 15
+            },
+            "current": 2,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 2,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 6,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "prism-party",
+        "seed": "sm-v1-prism-09",
+        "chapter": 2,
+        "number": 9,
+        "titleKey": "level9",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 28
+            }
+          ],
+          "moveLimit": 20
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "color"
+          }
+        ],
+        "mechanic": "Swap the neutral prism with a type to clear that ordinary type.",
+        "difficulty": "Choose a useful prism partner."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "clear",
+            "types": [
+              "pentagon"
+            ],
+            "target": 28
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-prism-09",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"clear\",\"types\":[\"pentagon\"],\"target\":28}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"rectangle\",\"special\":null},{\"id\":2,\"type\":\"pentagon\",\"special\":null},{\"id\":3,\"type\":\"triangle\",\"special\":null},{\"id\":4,\"type\":\"rectangle\",\"special\":null},{\"id\":5,\"type\":\"triangle\",\"special\":null},{\"id\":6,\"type\":\"square\",\"special\":null},{\"id\":7,\"type\":\"pentagon\",\"special\":null},{\"id\":8,\"type\":\"star\",\"special\":null}],[{\"id\":9,\"type\":\"star\",\"special\":null},{\"id\":10,\"type\":\"pentagon\",\"special\":null},{\"id\":11,\"type\":\"rectangle\",\"special\":null},{\"id\":12,\"type\":\"star\",\"special\":null},{\"id\":13,\"type\":\"star\",\"special\":null},{\"id\":14,\"type\":\"circle\",\"special\":null},{\"id\":15,\"type\":\"square\",\"special\":null},{\"id\":16,\"type\":\"star\",\"special\":null}],[{\"id\":17,\"type\":\"star\",\"special\":null},{\"id\":18,\"type\":\"circle\",\"special\":null},{\"id\":19,\"type\":\"circle\",\"special\":null},{\"id\":20,\"type\":\"pentagon\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"rectangle\",\"special\":null},{\"id\":23,\"type\":\"star\",\"special\":null},{\"id\":24,\"type\":\"pentagon\",\"special\":null}],[{\"id\":25,\"type\":\"pentagon\",\"special\":null},{\"id\":26,\"type\":\"circle\",\"special\":null},{\"id\":27,\"type\":\"star\",\"special\":null},{\"id\":28,\"type\":null,\"special\":\"color\"},{\"id\":29,\"type\":\"square\",\"special\":null},{\"id\":30,\"type\":\"pentagon\",\"special\":null},{\"id\":31,\"type\":\"rectangle\",\"special\":null},{\"id\":32,\"type\":\"rectangle\",\"special\":null}],[{\"id\":33,\"type\":\"square\",\"special\":null},{\"id\":34,\"type\":\"triangle\",\"special\":null},{\"id\":35,\"type\":\"rectangle\",\"special\":null},{\"id\":36,\"type\":\"pentagon\",\"special\":null},{\"id\":37,\"type\":\"triangle\",\"special\":null},{\"id\":38,\"type\":\"square\",\"special\":null},{\"id\":39,\"type\":\"square\",\"special\":null},{\"id\":40,\"type\":\"pentagon\",\"special\":null}],[{\"id\":41,\"type\":\"square\",\"special\":null},{\"id\":42,\"type\":\"triangle\",\"special\":null},{\"id\":43,\"type\":\"circle\",\"special\":null},{\"id\":44,\"type\":\"star\",\"special\":null},{\"id\":45,\"type\":\"pentagon\",\"special\":null},{\"id\":46,\"type\":\"square\",\"special\":null},{\"id\":47,\"type\":\"rectangle\",\"special\":null},{\"id\":48,\"type\":\"pentagon\",\"special\":null}],[{\"id\":49,\"type\":\"circle\",\"special\":null},{\"id\":50,\"type\":\"rectangle\",\"special\":null},{\"id\":51,\"type\":\"triangle\",\"special\":null},{\"id\":52,\"type\":\"rectangle\",\"special\":null},{\"id\":53,\"type\":\"star\",\"special\":null},{\"id\":54,\"type\":\"pentagon\",\"special\":null},{\"id\":55,\"type\":\"circle\",\"special\":null},{\"id\":56,\"type\":\"circle\",\"special\":null}],[{\"id\":57,\"type\":\"pentagon\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"square\",\"special\":null},{\"id\":61,\"type\":\"star\",\"special\":null},{\"id\":62,\"type\":\"pentagon\",\"special\":null},{\"id\":63,\"type\":\"square\",\"special\":null},{\"id\":64,\"type\":\"pentagon\",\"special\":null}]],\"rng\":3382833565,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 9,
+        "score": 3400,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 28
+            },
+            "current": 29,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 2
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 600,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 28
+            },
+            "current": 0,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "power-pair",
+        "seed": "sm-v1-pair-10",
+        "chapter": 2,
+        "number": 10,
+        "titleKey": "level10",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 3500
+            }
+          ],
+          "moveLimit": 20
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "horizontal"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "bomb"
+          }
+        ],
+        "mechanic": "Adjacent line and bomb demonstrate a special combination.",
+        "difficulty": "Chapter review: combine powers, then build score."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 3500
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-pair-10",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":3500}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"triangle\",\"special\":null},{\"id\":2,\"type\":\"circle\",\"special\":null},{\"id\":3,\"type\":\"triangle\",\"special\":null},{\"id\":4,\"type\":\"triangle\",\"special\":null},{\"id\":5,\"type\":\"square\",\"special\":null},{\"id\":6,\"type\":\"pentagon\",\"special\":null},{\"id\":7,\"type\":\"square\",\"special\":null},{\"id\":8,\"type\":\"triangle\",\"special\":null}],[{\"id\":9,\"type\":\"pentagon\",\"special\":null},{\"id\":10,\"type\":\"square\",\"special\":null},{\"id\":11,\"type\":\"circle\",\"special\":null},{\"id\":12,\"type\":\"pentagon\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"square\",\"special\":null},{\"id\":15,\"type\":\"rectangle\",\"special\":null},{\"id\":16,\"type\":\"pentagon\",\"special\":null}],[{\"id\":17,\"type\":\"star\",\"special\":null},{\"id\":18,\"type\":\"circle\",\"special\":null},{\"id\":19,\"type\":\"star\",\"special\":null},{\"id\":20,\"type\":\"triangle\",\"special\":null},{\"id\":21,\"type\":\"square\",\"special\":null},{\"id\":22,\"type\":\"rectangle\",\"special\":null},{\"id\":23,\"type\":\"pentagon\",\"special\":null},{\"id\":24,\"type\":\"rectangle\",\"special\":null}],[{\"id\":25,\"type\":\"rectangle\",\"special\":null},{\"id\":26,\"type\":\"rectangle\",\"special\":null},{\"id\":27,\"type\":\"star\",\"special\":null},{\"id\":28,\"type\":\"rectangle\",\"special\":\"horizontal\"},{\"id\":29,\"type\":\"rectangle\",\"special\":\"bomb\"},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"pentagon\",\"special\":null},{\"id\":32,\"type\":\"triangle\",\"special\":null}],[{\"id\":33,\"type\":\"square\",\"special\":null},{\"id\":34,\"type\":\"pentagon\",\"special\":null},{\"id\":35,\"type\":\"circle\",\"special\":null},{\"id\":36,\"type\":\"pentagon\",\"special\":null},{\"id\":37,\"type\":\"triangle\",\"special\":null},{\"id\":38,\"type\":\"square\",\"special\":null},{\"id\":39,\"type\":\"rectangle\",\"special\":null},{\"id\":40,\"type\":\"triangle\",\"special\":null}],[{\"id\":41,\"type\":\"rectangle\",\"special\":null},{\"id\":42,\"type\":\"pentagon\",\"special\":null},{\"id\":43,\"type\":\"rectangle\",\"special\":null},{\"id\":44,\"type\":\"circle\",\"special\":null},{\"id\":45,\"type\":\"pentagon\",\"special\":null},{\"id\":46,\"type\":\"pentagon\",\"special\":null},{\"id\":47,\"type\":\"triangle\",\"special\":null},{\"id\":48,\"type\":\"star\",\"special\":null}],[{\"id\":49,\"type\":\"triangle\",\"special\":null},{\"id\":50,\"type\":\"circle\",\"special\":null},{\"id\":51,\"type\":\"triangle\",\"special\":null},{\"id\":52,\"type\":\"pentagon\",\"special\":null},{\"id\":53,\"type\":\"triangle\",\"special\":null},{\"id\":54,\"type\":\"square\",\"special\":null},{\"id\":55,\"type\":\"star\",\"special\":null},{\"id\":56,\"type\":\"pentagon\",\"special\":null}],[{\"id\":57,\"type\":\"circle\",\"special\":null},{\"id\":58,\"type\":\"pentagon\",\"special\":null},{\"id\":59,\"type\":\"pentagon\",\"special\":null},{\"id\":60,\"type\":\"rectangle\",\"special\":null},{\"id\":61,\"type\":\"circle\",\"special\":null},{\"id\":62,\"type\":\"pentagon\",\"special\":null},{\"id\":63,\"type\":\"star\",\"special\":null},{\"id\":64,\"type\":\"pentagon\",\"special\":null}]],\"rng\":2995691418,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 5,
+        "score": 3650,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 3500
+            },
+            "current": 3650,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 5
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 660,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 3500
+            },
+            "current": 660,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 0,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "crossroads",
+        "seed": "sm-v1-cross-11",
+        "chapter": 3,
+        "number": 11,
+        "titleKey": "level11",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 3200
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 25
+            }
+          ],
+          "moveLimit": 22
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "horizontal"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "vertical"
+          }
+        ],
+        "mechanic": "Combine crossing line effects while pursuing a particular type.",
+        "difficulty": "Compound objective with a useful opening combination."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 3200
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "circle"
+            ],
+            "target": 25
+          }
+        ],
+        "moveLimit": 22,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-cross-11",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":3200},{\"kind\":\"clear\",\"types\":[\"circle\"],\"target\":25}],\"moveLimit\":22,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"circle\",\"special\":null},{\"id\":2,\"type\":\"circle\",\"special\":null},{\"id\":3,\"type\":\"star\",\"special\":null},{\"id\":4,\"type\":\"triangle\",\"special\":null},{\"id\":5,\"type\":\"triangle\",\"special\":null},{\"id\":6,\"type\":\"rectangle\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"rectangle\",\"special\":null}],[{\"id\":9,\"type\":\"star\",\"special\":null},{\"id\":10,\"type\":\"triangle\",\"special\":null},{\"id\":11,\"type\":\"rectangle\",\"special\":null},{\"id\":12,\"type\":\"rectangle\",\"special\":null},{\"id\":13,\"type\":\"star\",\"special\":null},{\"id\":14,\"type\":\"pentagon\",\"special\":null},{\"id\":15,\"type\":\"pentagon\",\"special\":null},{\"id\":16,\"type\":\"triangle\",\"special\":null}],[{\"id\":17,\"type\":\"circle\",\"special\":null},{\"id\":18,\"type\":\"circle\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"triangle\",\"special\":null},{\"id\":23,\"type\":\"star\",\"special\":null},{\"id\":24,\"type\":\"triangle\",\"special\":null}],[{\"id\":25,\"type\":\"rectangle\",\"special\":null},{\"id\":26,\"type\":\"rectangle\",\"special\":null},{\"id\":27,\"type\":\"square\",\"special\":null},{\"id\":28,\"type\":\"star\",\"special\":\"horizontal\"},{\"id\":29,\"type\":\"star\",\"special\":\"vertical\"},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"pentagon\",\"special\":null},{\"id\":32,\"type\":\"pentagon\",\"special\":null}],[{\"id\":33,\"type\":\"pentagon\",\"special\":null},{\"id\":34,\"type\":\"pentagon\",\"special\":null},{\"id\":35,\"type\":\"circle\",\"special\":null},{\"id\":36,\"type\":\"pentagon\",\"special\":null},{\"id\":37,\"type\":\"rectangle\",\"special\":null},{\"id\":38,\"type\":\"star\",\"special\":null},{\"id\":39,\"type\":\"star\",\"special\":null},{\"id\":40,\"type\":\"circle\",\"special\":null}],[{\"id\":41,\"type\":\"square\",\"special\":null},{\"id\":42,\"type\":\"circle\",\"special\":null},{\"id\":43,\"type\":\"square\",\"special\":null},{\"id\":44,\"type\":\"circle\",\"special\":null},{\"id\":45,\"type\":\"triangle\",\"special\":null},{\"id\":46,\"type\":\"circle\",\"special\":null},{\"id\":47,\"type\":\"star\",\"special\":null},{\"id\":48,\"type\":\"pentagon\",\"special\":null}],[{\"id\":49,\"type\":\"circle\",\"special\":null},{\"id\":50,\"type\":\"pentagon\",\"special\":null},{\"id\":51,\"type\":\"triangle\",\"special\":null},{\"id\":52,\"type\":\"circle\",\"special\":null},{\"id\":53,\"type\":\"rectangle\",\"special\":null},{\"id\":54,\"type\":\"rectangle\",\"special\":null},{\"id\":55,\"type\":\"pentagon\",\"special\":null},{\"id\":56,\"type\":\"triangle\",\"special\":null}],[{\"id\":57,\"type\":\"square\",\"special\":null},{\"id\":58,\"type\":\"pentagon\",\"special\":null},{\"id\":59,\"type\":\"star\",\"special\":null},{\"id\":60,\"type\":\"star\",\"special\":null},{\"id\":61,\"type\":\"square\",\"special\":null},{\"id\":62,\"type\":\"circle\",\"special\":null},{\"id\":63,\"type\":\"triangle\",\"special\":null},{\"id\":64,\"type\":\"pentagon\",\"special\":null}]],\"rng\":3261290874,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 11,
+        "score": 3410,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 3200
+            },
+            "current": 3410,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 25
+            },
+            "current": 25,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 6,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 0
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 22,
+        "score": 920,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 3200
+            },
+            "current": 920,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle"
+              ],
+              "target": 25
+            },
+            "current": 6,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 6
+            },
+            "to": {
+              "row": 5,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 7
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "golden-fireworks",
+        "seed": "sm-v1-fireworks-12",
+        "chapter": 3,
+        "number": 12,
+        "titleKey": "level12",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "clear",
+              "types": [
+                "triangle",
+                "star"
+              ],
+              "target": 60
+            }
+          ],
+          "moveLimit": 20
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "color"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "horizontal"
+          }
+        ],
+        "mechanic": "Prism plus line converts ordinary partners to alternating lines.",
+        "difficulty": "Plan collection around conversion chains."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "clear",
+            "types": [
+              "triangle",
+              "star"
+            ],
+            "target": 60
+          }
+        ],
+        "moveLimit": 20,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-fireworks-12",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"clear\",\"types\":[\"triangle\",\"star\"],\"target\":60}],\"moveLimit\":20,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"triangle\",\"special\":null},{\"id\":2,\"type\":\"circle\",\"special\":null},{\"id\":3,\"type\":\"pentagon\",\"special\":null},{\"id\":4,\"type\":\"circle\",\"special\":null},{\"id\":5,\"type\":\"pentagon\",\"special\":null},{\"id\":6,\"type\":\"triangle\",\"special\":null},{\"id\":7,\"type\":\"pentagon\",\"special\":null},{\"id\":8,\"type\":\"rectangle\",\"special\":null}],[{\"id\":9,\"type\":\"circle\",\"special\":null},{\"id\":10,\"type\":\"square\",\"special\":null},{\"id\":11,\"type\":\"pentagon\",\"special\":null},{\"id\":12,\"type\":\"square\",\"special\":null},{\"id\":13,\"type\":\"pentagon\",\"special\":null},{\"id\":14,\"type\":\"square\",\"special\":null},{\"id\":15,\"type\":\"rectangle\",\"special\":null},{\"id\":16,\"type\":\"rectangle\",\"special\":null}],[{\"id\":17,\"type\":\"square\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"rectangle\",\"special\":null},{\"id\":20,\"type\":\"square\",\"special\":null},{\"id\":21,\"type\":\"square\",\"special\":null},{\"id\":22,\"type\":\"rectangle\",\"special\":null},{\"id\":23,\"type\":\"circle\",\"special\":null},{\"id\":24,\"type\":\"square\",\"special\":null}],[{\"id\":25,\"type\":\"pentagon\",\"special\":null},{\"id\":26,\"type\":\"star\",\"special\":null},{\"id\":27,\"type\":\"circle\",\"special\":null},{\"id\":28,\"type\":null,\"special\":\"color\"},{\"id\":29,\"type\":\"rectangle\",\"special\":\"horizontal\"},{\"id\":30,\"type\":\"circle\",\"special\":null},{\"id\":31,\"type\":\"triangle\",\"special\":null},{\"id\":32,\"type\":\"circle\",\"special\":null}],[{\"id\":33,\"type\":\"star\",\"special\":null},{\"id\":34,\"type\":\"rectangle\",\"special\":null},{\"id\":35,\"type\":\"pentagon\",\"special\":null},{\"id\":36,\"type\":\"pentagon\",\"special\":null},{\"id\":37,\"type\":\"star\",\"special\":null},{\"id\":38,\"type\":\"square\",\"special\":null},{\"id\":39,\"type\":\"star\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"circle\",\"special\":null},{\"id\":42,\"type\":\"star\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"rectangle\",\"special\":null},{\"id\":45,\"type\":\"star\",\"special\":null},{\"id\":46,\"type\":\"square\",\"special\":null},{\"id\":47,\"type\":\"rectangle\",\"special\":null},{\"id\":48,\"type\":\"circle\",\"special\":null}],[{\"id\":49,\"type\":\"star\",\"special\":null},{\"id\":50,\"type\":\"square\",\"special\":null},{\"id\":51,\"type\":\"triangle\",\"special\":null},{\"id\":52,\"type\":\"rectangle\",\"special\":null},{\"id\":53,\"type\":\"rectangle\",\"special\":null},{\"id\":54,\"type\":\"triangle\",\"special\":null},{\"id\":55,\"type\":\"star\",\"special\":null},{\"id\":56,\"type\":\"square\",\"special\":null}],[{\"id\":57,\"type\":\"rectangle\",\"special\":null},{\"id\":58,\"type\":\"circle\",\"special\":null},{\"id\":59,\"type\":\"square\",\"special\":null},{\"id\":60,\"type\":\"square\",\"special\":null},{\"id\":61,\"type\":\"pentagon\",\"special\":null},{\"id\":62,\"type\":\"triangle\",\"special\":null},{\"id\":63,\"type\":\"rectangle\",\"special\":null},{\"id\":64,\"type\":\"circle\",\"special\":null}]],\"rng\":5473931,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "maximize normalized objective progress",
+        "status": "won",
+        "moves": 13,
+        "score": 3730,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "triangle",
+                "star"
+              ],
+              "target": 60
+            },
+            "current": 60,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 2
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 0
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 0
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 20,
+        "score": 870,
+        "progress": [
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "triangle",
+                "star"
+              ],
+              "target": 60
+            },
+            "current": 13,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 1
+            },
+            "to": {
+              "row": 7,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 0,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 1
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 5
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "double-bloom",
+        "seed": "sm-v1-bloom-13",
+        "chapter": 3,
+        "number": 13,
+        "titleKey": "level13",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 4200
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 25
+            }
+          ],
+          "moveLimit": 22
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "bomb"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "bomb"
+          }
+        ],
+        "mechanic": "Two bombs combine into a larger area; use cascades for remaining goals.",
+        "difficulty": "Balance broad clears with targeted collection."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 4200
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "pentagon"
+            ],
+            "target": 25
+          }
+        ],
+        "moveLimit": 22,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-bloom-13",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":4200},{\"kind\":\"clear\",\"types\":[\"pentagon\"],\"target\":25}],\"moveLimit\":22,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"triangle\",\"special\":null},{\"id\":2,\"type\":\"pentagon\",\"special\":null},{\"id\":3,\"type\":\"triangle\",\"special\":null},{\"id\":4,\"type\":\"rectangle\",\"special\":null},{\"id\":5,\"type\":\"circle\",\"special\":null},{\"id\":6,\"type\":\"triangle\",\"special\":null},{\"id\":7,\"type\":\"star\",\"special\":null},{\"id\":8,\"type\":\"pentagon\",\"special\":null}],[{\"id\":9,\"type\":\"pentagon\",\"special\":null},{\"id\":10,\"type\":\"circle\",\"special\":null},{\"id\":11,\"type\":\"star\",\"special\":null},{\"id\":12,\"type\":\"star\",\"special\":null},{\"id\":13,\"type\":\"pentagon\",\"special\":null},{\"id\":14,\"type\":\"square\",\"special\":null},{\"id\":15,\"type\":\"square\",\"special\":null},{\"id\":16,\"type\":\"rectangle\",\"special\":null}],[{\"id\":17,\"type\":\"star\",\"special\":null},{\"id\":18,\"type\":\"square\",\"special\":null},{\"id\":19,\"type\":\"pentagon\",\"special\":null},{\"id\":20,\"type\":\"pentagon\",\"special\":null},{\"id\":21,\"type\":\"circle\",\"special\":null},{\"id\":22,\"type\":\"pentagon\",\"special\":null},{\"id\":23,\"type\":\"star\",\"special\":null},{\"id\":24,\"type\":\"square\",\"special\":null}],[{\"id\":25,\"type\":\"rectangle\",\"special\":null},{\"id\":26,\"type\":\"square\",\"special\":null},{\"id\":27,\"type\":\"star\",\"special\":null},{\"id\":28,\"type\":\"star\",\"special\":\"bomb\"},{\"id\":29,\"type\":\"pentagon\",\"special\":\"bomb\"},{\"id\":30,\"type\":\"triangle\",\"special\":null},{\"id\":31,\"type\":\"square\",\"special\":null},{\"id\":32,\"type\":\"triangle\",\"special\":null}],[{\"id\":33,\"type\":\"star\",\"special\":null},{\"id\":34,\"type\":\"rectangle\",\"special\":null},{\"id\":35,\"type\":\"circle\",\"special\":null},{\"id\":36,\"type\":\"square\",\"special\":null},{\"id\":37,\"type\":\"triangle\",\"special\":null},{\"id\":38,\"type\":\"pentagon\",\"special\":null},{\"id\":39,\"type\":\"rectangle\",\"special\":null},{\"id\":40,\"type\":\"circle\",\"special\":null}],[{\"id\":41,\"type\":\"rectangle\",\"special\":null},{\"id\":42,\"type\":\"square\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"circle\",\"special\":null},{\"id\":45,\"type\":\"star\",\"special\":null},{\"id\":46,\"type\":\"circle\",\"special\":null},{\"id\":47,\"type\":\"rectangle\",\"special\":null},{\"id\":48,\"type\":\"rectangle\",\"special\":null}],[{\"id\":49,\"type\":\"circle\",\"special\":null},{\"id\":50,\"type\":\"triangle\",\"special\":null},{\"id\":51,\"type\":\"star\",\"special\":null},{\"id\":52,\"type\":\"square\",\"special\":null},{\"id\":53,\"type\":\"square\",\"special\":null},{\"id\":54,\"type\":\"triangle\",\"special\":null},{\"id\":55,\"type\":\"square\",\"special\":null},{\"id\":56,\"type\":\"pentagon\",\"special\":null}],[{\"id\":57,\"type\":\"circle\",\"special\":null},{\"id\":58,\"type\":\"pentagon\",\"special\":null},{\"id\":59,\"type\":\"square\",\"special\":null},{\"id\":60,\"type\":\"pentagon\",\"special\":null},{\"id\":61,\"type\":\"square\",\"special\":null},{\"id\":62,\"type\":\"pentagon\",\"special\":null},{\"id\":63,\"type\":\"rectangle\",\"special\":null},{\"id\":64,\"type\":\"circle\",\"special\":null}]],\"rng\":100829787,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "Beam search width 8; normalized engine objectives and score",
+        "status": "won",
+        "moves": 9,
+        "score": 4260,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 4200
+            },
+            "current": 4260,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 25
+            },
+            "current": 30,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 6,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 4
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          }
+        ],
+        "failures": 0,
+        "simulations": 1665
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 22,
+        "score": 1090,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 4200
+            },
+            "current": 1090,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "pentagon"
+              ],
+              "target": 25
+            },
+            "current": 5,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 0
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 6,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 1
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 6,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 0,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 7
+            },
+            "to": {
+              "row": 3,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 2
+            },
+            "to": {
+              "row": 4,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 0
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 1
+            },
+            "to": {
+              "row": 4,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 1,
+              "col": 0
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "mint-constellation",
+        "seed": "sm-v1-stars-14",
+        "chapter": 3,
+        "number": 14,
+        "titleKey": "level14",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 5000
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "rectangle"
+              ],
+              "target": 40
+            }
+          ],
+          "moveLimit": 24
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "color"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "bomb"
+          }
+        ],
+        "mechanic": "Prism and bomb conversion starts a chain; finish both objectives.",
+        "difficulty": "Advanced mixed-objective planning."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 5000
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "rectangle"
+            ],
+            "target": 40
+          }
+        ],
+        "moveLimit": 24,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-stars-14",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":5000},{\"kind\":\"clear\",\"types\":[\"rectangle\"],\"target\":40}],\"moveLimit\":24,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"square\",\"special\":null},{\"id\":2,\"type\":\"triangle\",\"special\":null},{\"id\":3,\"type\":\"star\",\"special\":null},{\"id\":4,\"type\":\"square\",\"special\":null},{\"id\":5,\"type\":\"square\",\"special\":null},{\"id\":6,\"type\":\"star\",\"special\":null},{\"id\":7,\"type\":\"pentagon\",\"special\":null},{\"id\":8,\"type\":\"pentagon\",\"special\":null}],[{\"id\":9,\"type\":\"circle\",\"special\":null},{\"id\":10,\"type\":\"pentagon\",\"special\":null},{\"id\":11,\"type\":\"square\",\"special\":null},{\"id\":12,\"type\":\"pentagon\",\"special\":null},{\"id\":13,\"type\":\"pentagon\",\"special\":null},{\"id\":14,\"type\":\"star\",\"special\":null},{\"id\":15,\"type\":\"square\",\"special\":null},{\"id\":16,\"type\":\"square\",\"special\":null}],[{\"id\":17,\"type\":\"square\",\"special\":null},{\"id\":18,\"type\":\"triangle\",\"special\":null},{\"id\":19,\"type\":\"pentagon\",\"special\":null},{\"id\":20,\"type\":\"circle\",\"special\":null},{\"id\":21,\"type\":\"star\",\"special\":null},{\"id\":22,\"type\":\"pentagon\",\"special\":null},{\"id\":23,\"type\":\"triangle\",\"special\":null},{\"id\":24,\"type\":\"pentagon\",\"special\":null}],[{\"id\":25,\"type\":\"rectangle\",\"special\":null},{\"id\":26,\"type\":\"square\",\"special\":null},{\"id\":27,\"type\":\"rectangle\",\"special\":null},{\"id\":28,\"type\":null,\"special\":\"color\"},{\"id\":29,\"type\":\"pentagon\",\"special\":\"bomb\"},{\"id\":30,\"type\":\"triangle\",\"special\":null},{\"id\":31,\"type\":\"circle\",\"special\":null},{\"id\":32,\"type\":\"pentagon\",\"special\":null}],[{\"id\":33,\"type\":\"rectangle\",\"special\":null},{\"id\":34,\"type\":\"triangle\",\"special\":null},{\"id\":35,\"type\":\"star\",\"special\":null},{\"id\":36,\"type\":\"star\",\"special\":null},{\"id\":37,\"type\":\"pentagon\",\"special\":null},{\"id\":38,\"type\":\"circle\",\"special\":null},{\"id\":39,\"type\":\"rectangle\",\"special\":null},{\"id\":40,\"type\":\"circle\",\"special\":null}],[{\"id\":41,\"type\":\"star\",\"special\":null},{\"id\":42,\"type\":\"circle\",\"special\":null},{\"id\":43,\"type\":\"rectangle\",\"special\":null},{\"id\":44,\"type\":\"triangle\",\"special\":null},{\"id\":45,\"type\":\"square\",\"special\":null},{\"id\":46,\"type\":\"pentagon\",\"special\":null},{\"id\":47,\"type\":\"pentagon\",\"special\":null},{\"id\":48,\"type\":\"square\",\"special\":null}],[{\"id\":49,\"type\":\"square\",\"special\":null},{\"id\":50,\"type\":\"circle\",\"special\":null},{\"id\":51,\"type\":\"circle\",\"special\":null},{\"id\":52,\"type\":\"pentagon\",\"special\":null},{\"id\":53,\"type\":\"circle\",\"special\":null},{\"id\":54,\"type\":\"circle\",\"special\":null},{\"id\":55,\"type\":\"rectangle\",\"special\":null},{\"id\":56,\"type\":\"pentagon\",\"special\":null}],[{\"id\":57,\"type\":\"square\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"triangle\",\"special\":null},{\"id\":60,\"type\":\"triangle\",\"special\":null},{\"id\":61,\"type\":\"star\",\"special\":null},{\"id\":62,\"type\":\"pentagon\",\"special\":null},{\"id\":63,\"type\":\"rectangle\",\"special\":null},{\"id\":64,\"type\":\"star\",\"special\":null}]],\"rng\":3757964581,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "Beam search width 8; normalized engine objectives and score",
+        "status": "won",
+        "moves": 12,
+        "score": 8210,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 5000
+            },
+            "current": 8210,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "rectangle"
+              ],
+              "target": 40
+            },
+            "current": 40,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 2,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 1
+            },
+            "to": {
+              "row": 6,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 1
+            },
+            "to": {
+              "row": 6,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 3
+            },
+            "to": {
+              "row": 7,
+              "col": 3
+            }
+          }
+        ],
+        "failures": 0,
+        "simulations": 2337
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 24,
+        "score": 780,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 5000
+            },
+            "current": 780,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "rectangle"
+              ],
+              "target": 40
+            },
+            "current": 0,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 4,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 3,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 1,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 2
+            },
+            "to": {
+              "row": 6,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 0,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 2,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 2
+            },
+            "to": {
+              "row": 2,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      }
+    },
+    {
+      "level": {
+        "id": "all-together",
+        "seed": "sm-v1-together-15",
+        "chapter": 3,
+        "number": 15,
+        "titleKey": "level15",
+        "config": {
+          "rows": 8,
+          "cols": 8,
+          "pieceTypes": [
+            "circle",
+            "triangle",
+            "square",
+            "rectangle",
+            "pentagon",
+            "star"
+          ],
+          "objectives": [
+            {
+              "kind": "score",
+              "target": 6500
+            },
+            {
+              "kind": "clear",
+              "types": [
+                "circle",
+                "triangle",
+                "square",
+                "rectangle",
+                "pentagon",
+                "star"
+              ],
+              "target": 170
+            }
+          ],
+          "moveLimit": 26
+        },
+        "setup": [
+          {
+            "row": 3,
+            "col": 3,
+            "special": "color"
+          },
+          {
+            "row": 3,
+            "col": 4,
+            "special": "color"
+          }
+        ],
+        "mechanic": "Two prisms clear the board. Build further cascades and combinations to finish.",
+        "difficulty": "Finale: compound goals and full-board opening power."
+      },
+      "config": {
+        "rows": 8,
+        "cols": 8,
+        "pieceTypes": [
+          "circle",
+          "triangle",
+          "square",
+          "rectangle",
+          "pentagon",
+          "star"
+        ],
+        "rules": {
+          "matchLength": 3,
+          "createFour": true,
+          "createFive": true,
+          "createIntersection": true,
+          "specialSwaps": true,
+          "bombRadius": 1,
+          "comboLineRadius": 1
+        },
+        "scoring": {
+          "piecePoints": 10,
+          "specialBonus": 20,
+          "cascadeStep": 1
+        },
+        "objectives": [
+          {
+            "kind": "score",
+            "target": 6500
+          },
+          {
+            "kind": "clear",
+            "types": [
+              "circle",
+              "triangle",
+              "square",
+              "rectangle",
+              "pentagon",
+              "star"
+            ],
+            "target": 170
+          }
+        ],
+        "moveLimit": 26,
+        "maxWaves": 100,
+        "shuffleAttempts": 1000,
+        "generationAttempts": 100
+      },
+      "seed": "sm-v1-together-15",
+      "initial": "{\"version\":1,\"config\":{\"rows\":8,\"cols\":8,\"pieceTypes\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"rules\":{\"matchLength\":3,\"createFour\":true,\"createFive\":true,\"createIntersection\":true,\"specialSwaps\":true,\"bombRadius\":1,\"comboLineRadius\":1},\"scoring\":{\"piecePoints\":10,\"specialBonus\":20,\"cascadeStep\":1},\"objectives\":[{\"kind\":\"score\",\"target\":6500},{\"kind\":\"clear\",\"types\":[\"circle\",\"triangle\",\"square\",\"rectangle\",\"pentagon\",\"star\"],\"target\":170}],\"moveLimit\":26,\"maxWaves\":100,\"shuffleAttempts\":1000,\"generationAttempts\":100},\"board\":[[{\"id\":1,\"type\":\"star\",\"special\":null},{\"id\":2,\"type\":\"rectangle\",\"special\":null},{\"id\":3,\"type\":\"circle\",\"special\":null},{\"id\":4,\"type\":\"triangle\",\"special\":null},{\"id\":5,\"type\":\"circle\",\"special\":null},{\"id\":6,\"type\":\"pentagon\",\"special\":null},{\"id\":7,\"type\":\"triangle\",\"special\":null},{\"id\":8,\"type\":\"triangle\",\"special\":null}],[{\"id\":9,\"type\":\"star\",\"special\":null},{\"id\":10,\"type\":\"triangle\",\"special\":null},{\"id\":11,\"type\":\"rectangle\",\"special\":null},{\"id\":12,\"type\":\"rectangle\",\"special\":null},{\"id\":13,\"type\":\"triangle\",\"special\":null},{\"id\":14,\"type\":\"pentagon\",\"special\":null},{\"id\":15,\"type\":\"circle\",\"special\":null},{\"id\":16,\"type\":\"square\",\"special\":null}],[{\"id\":17,\"type\":\"rectangle\",\"special\":null},{\"id\":18,\"type\":\"star\",\"special\":null},{\"id\":19,\"type\":\"circle\",\"special\":null},{\"id\":20,\"type\":\"pentagon\",\"special\":null},{\"id\":21,\"type\":\"triangle\",\"special\":null},{\"id\":22,\"type\":\"triangle\",\"special\":null},{\"id\":23,\"type\":\"rectangle\",\"special\":null},{\"id\":24,\"type\":\"rectangle\",\"special\":null}],[{\"id\":25,\"type\":\"circle\",\"special\":null},{\"id\":26,\"type\":\"circle\",\"special\":null},{\"id\":27,\"type\":\"star\",\"special\":null},{\"id\":28,\"type\":null,\"special\":\"color\"},{\"id\":29,\"type\":null,\"special\":\"color\"},{\"id\":30,\"type\":\"square\",\"special\":null},{\"id\":31,\"type\":\"star\",\"special\":null},{\"id\":32,\"type\":\"square\",\"special\":null}],[{\"id\":33,\"type\":\"star\",\"special\":null},{\"id\":34,\"type\":\"circle\",\"special\":null},{\"id\":35,\"type\":\"triangle\",\"special\":null},{\"id\":36,\"type\":\"square\",\"special\":null},{\"id\":37,\"type\":\"circle\",\"special\":null},{\"id\":38,\"type\":\"star\",\"special\":null},{\"id\":39,\"type\":\"rectangle\",\"special\":null},{\"id\":40,\"type\":\"rectangle\",\"special\":null}],[{\"id\":41,\"type\":\"triangle\",\"special\":null},{\"id\":42,\"type\":\"pentagon\",\"special\":null},{\"id\":43,\"type\":\"triangle\",\"special\":null},{\"id\":44,\"type\":\"circle\",\"special\":null},{\"id\":45,\"type\":\"square\",\"special\":null},{\"id\":46,\"type\":\"square\",\"special\":null},{\"id\":47,\"type\":\"rectangle\",\"special\":null},{\"id\":48,\"type\":\"square\",\"special\":null}],[{\"id\":49,\"type\":\"pentagon\",\"special\":null},{\"id\":50,\"type\":\"circle\",\"special\":null},{\"id\":51,\"type\":\"rectangle\",\"special\":null},{\"id\":52,\"type\":\"star\",\"special\":null},{\"id\":53,\"type\":\"rectangle\",\"special\":null},{\"id\":54,\"type\":\"star\",\"special\":null},{\"id\":55,\"type\":\"circle\",\"special\":null},{\"id\":56,\"type\":\"pentagon\",\"special\":null}],[{\"id\":57,\"type\":\"circle\",\"special\":null},{\"id\":58,\"type\":\"square\",\"special\":null},{\"id\":59,\"type\":\"square\",\"special\":null},{\"id\":60,\"type\":\"circle\",\"special\":null},{\"id\":61,\"type\":\"circle\",\"special\":null},{\"id\":62,\"type\":\"square\",\"special\":null},{\"id\":63,\"type\":\"pentagon\",\"special\":null},{\"id\":64,\"type\":\"circle\",\"special\":null}]],\"rng\":591801917,\"nextId\":65,\"moves\":0,\"score\":0,\"cleared\":{\"circle\":0,\"triangle\":0,\"square\":0,\"rectangle\":0,\"pentagon\":0,\"star\":0},\"status\":\"playing\"}",
+      "verification": {
+        "method": "Greedy engine simulation; deterministic witness, not exhaustive proof",
+        "humanReview": "pending G5 creative review"
+      },
+      "win": {
+        "policy": "Beam search width 8; normalized engine objectives and score",
+        "status": "won",
+        "moves": 18,
+        "score": 6770,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 6500
+            },
+            "current": 6770,
+            "complete": true
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle",
+                "triangle",
+                "square",
+                "rectangle",
+                "pentagon",
+                "star"
+              ],
+              "target": 170
+            },
+            "current": 312,
+            "complete": true
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 3,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 4
+            },
+            "to": {
+              "row": 5,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 5
+            },
+            "to": {
+              "row": 5,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 3,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 4
+            },
+            "to": {
+              "row": 4,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 2
+            },
+            "to": {
+              "row": 6,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 6,
+              "col": 6
+            },
+            "to": {
+              "row": 6,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 2
+            },
+            "to": {
+              "row": 5,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 7
+            },
+            "to": {
+              "row": 7,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 3
+            },
+            "to": {
+              "row": 3,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 0,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 5,
+              "col": 7
+            },
+            "to": {
+              "row": 4,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 7,
+              "col": 6
+            },
+            "to": {
+              "row": 7,
+              "col": 7
+            }
+          }
+        ],
+        "failures": 0,
+        "simulations": 2753
+      },
+      "loss": {
+        "policy": "minimize normalized objective progress",
+        "status": "lost",
+        "moves": 26,
+        "score": 780,
+        "progress": [
+          {
+            "objective": {
+              "kind": "score",
+              "target": 6500
+            },
+            "current": 780,
+            "complete": false
+          },
+          {
+            "objective": {
+              "kind": "clear",
+              "types": [
+                "circle",
+                "triangle",
+                "square",
+                "rectangle",
+                "pentagon",
+                "star"
+              ],
+              "target": 170
+            },
+            "current": 78,
+            "complete": false
+          }
+        ],
+        "actions": [
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 1
+            },
+            "to": {
+              "row": 2,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 1
+            },
+            "to": {
+              "row": 1,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 0
+            },
+            "to": {
+              "row": 3,
+              "col": 0
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 1,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 2
+            },
+            "to": {
+              "row": 1,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 3,
+              "col": 2
+            },
+            "to": {
+              "row": 4,
+              "col": 2
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 6
+            },
+            "to": {
+              "row": 3,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 0,
+              "col": 5
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 4
+            },
+            "to": {
+              "row": 1,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 5
+            },
+            "to": {
+              "row": 2,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 7
+            },
+            "to": {
+              "row": 2,
+              "col": 7
+            }
+          },
+          {
+            "from": {
+              "row": 1,
+              "col": 5
+            },
+            "to": {
+              "row": 1,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 0
+            },
+            "to": {
+              "row": 0,
+              "col": 1
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 5
+            },
+            "to": {
+              "row": 0,
+              "col": 6
+            }
+          },
+          {
+            "from": {
+              "row": 4,
+              "col": 3
+            },
+            "to": {
+              "row": 5,
+              "col": 3
+            }
+          },
+          {
+            "from": {
+              "row": 2,
+              "col": 4
+            },
+            "to": {
+              "row": 3,
+              "col": 4
+            }
+          },
+          {
+            "from": {
+              "row": 0,
+              "col": 3
+            },
+            "to": {
+              "row": 0,
+              "col": 4
+            }
+          }
+        ],
+        "failures": 0
+      }
+    }
+  ]
+}

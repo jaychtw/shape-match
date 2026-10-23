@@ -21,7 +21,8 @@ export class TurnController {
    }
    for(const event of result.events)await present(this.view,event,result.events.length);
    if(!reconciles(this.view,result.state,candidate.objectives()))throw new Error('Engine/UI reconciliation failed');
-   this.session={game:candidate,initial:previous.initial,actions:[...previous.actions,structuredClone(action)]};
+   const checkpoint=previous.actions.length>=256;
+   this.session={...previous,game:candidate,initial:checkpoint?previous.game.serialize():previous.initial,actions:[...(checkpoint?[]:previous.actions),structuredClone(action)]};
    return {kind:'committed',previous,events:result.events};
   }catch(error) {
    const code=error instanceof EngineError?error.code:'PRESENTATION_FAILURE';

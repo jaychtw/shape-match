@@ -1,22 +1,24 @@
 import { loadGame, type Game, type Move } from '@jaychtw/match3-core';
-import { ENGINE, level, newGame } from './level.ts';
+import { ENGINE, level, definition, newGame } from './level.ts';
 export const SAVE_KEY = 'shape-match-session-v1';
 export const BACKUP_KEY = 'shape-match-session-backup-v1';
 export interface SavedSession { version:1; engine:string; level:string; seed:string; initial:string; state:string; actions:Move[] }
-export interface Session { game:Game; initial:string; actions:Move[] }
-export const freshSession = (): Session => {const game=newGame(); return {game,initial:game.serialize(),actions:[]};};
+export interface Session { game:Game; initial:string; actions:Move[]; levelId?:string }
+export const freshSession = (levelId=level.id): Session => {const game=newGame(levelId); return {game,initial:game.serialize(),actions:[],levelId};};
 export function encode(session: Session): string {
- return JSON.stringify({version:1,engine:ENGINE,level:level.id,seed:level.seed,initial:session.initial,state:session.game.serialize(),actions:session.actions} satisfies SavedSession);
+ const spec=definition(session.levelId??level.id);
+ return JSON.stringify({version:1,engine:ENGINE,level:spec.id,seed:spec.seed,initial:session.initial,state:session.game.serialize(),actions:session.actions} satisfies SavedSession);
 }
 export function decode(raw: string): Session {
  const saved:SavedSession=JSON.parse(raw);
- if(saved.version!==1 || saved.engine!==ENGINE || saved.level!==level.id || saved.seed!==level.seed || !Array.isArray(saved.actions) || saved.actions.length>18)throw new Error('Unsupported session');
+ const spec=definition(saved.level);
+ if(saved.version!==1 || saved.engine!==ENGINE || saved.seed!==spec.seed || !Array.isArray(saved.actions) || saved.actions.length>256)throw new Error('Unsupported session');
  const game=loadGame(saved.state), initial=loadGame(saved.initial);
- const expected=newGame().state.config;
+ const expected=newGame(spec.id).state.config;
  for(const candidate of [game,initial])if(JSON.stringify(candidate.state.config)!==JSON.stringify(expected))throw new Error('Unexpected level configuration');
  for(const action of saved.actions)for(const p of [action?.from,action?.to])if(!p || !Number.isInteger(p.row)||!Number.isInteger(p.col)||p.row<0||p.row>7||p.col<0||p.col>7)throw new Error('Invalid replay action');
  // Engine validates all board, RNG, counter and status fields; do not fabricate a replacement.
- return {game,initial:saved.initial,actions:saved.actions};
+ return {game,initial:saved.initial,actions:saved.actions,levelId:spec.id};
 }
 export interface StorageLike { getItem(key:string):string|null; setItem(key:string,value:string):void }
 export function readSession(storage: StorageLike): {session:Session|null; backup:Session|null; issue:'corrupt'|'storage'|null} {
@@ -38,5 +40,5 @@ export function persist(storage: StorageLike, current:Session, previous?:Session
  }catch {return false;}
 }
 export function diagnostic(session:Session, action:Move, code:string) {
- return {version:1,engine:ENGINE,level:level.id,seed:level.seed,config:session.game.state.config,initial:session.initial,state:session.game.serialize(),actions:session.actions,attemptedAction:action,code};
+ return {version:1,engine:ENGINE,level:session.levelId??level.id,seed:definition(session.levelId??level.id).seed,config:session.game.state.config,initial:session.initial,state:session.game.serialize(),actions:session.actions,attemptedAction:action,code};
 }

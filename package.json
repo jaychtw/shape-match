@@ -1,6 +1,6 @@
 {
   "name": "shape-match",
-  "version": "0.2.0",
+  "version": "1.0.0-rc.1",
   "private": true,
   "type": "module",
   "engines": {
@@ -14,13 +14,15 @@
     "test:browser": "playwright test",
     "preview": "vite preview --host 0.0.0.0",
     "validate:level": "node scripts/validate-level.mjs",
-    "verify:live": "node scripts/verify-live.mjs"
+    "verify:live": "node scripts/verify-live.mjs",
+    "validate:levels": "node scripts/validate-levels.mjs",
+    "test:compat": "playwright test --config playwright.compat.config.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.11.1",
     "@playwright/test": "1.58.2",
     "typescript": "5.9.3",
-    "vite": "7.3.1"
+    "vite": "7.3.7"
   },
   "dependencies": {
     "@jaychtw/match3-core": "file:vendor/jaychtw-match3-core-1.0.0.tgz"

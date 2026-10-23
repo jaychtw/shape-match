@@ -1,0 +1,38 @@
+{
+  "unitIntegration": {
+    "passed": 55,
+    "failed": 0,
+    "command": "npm test"
+  },
+  "chromium": {
+    "passed": 39,
+    "failed": 0,
+    "originalG2BrowserRegressions": 32,
+    "fullCampaign": "All 15 engine-driven winning routes through actual inputs; exact state comparison after every turn; completion reload and replay",
+    "viewports": [
+      320,
+      390,
+      768,
+      1440
+    ]
+  },
+  "levelWitnesses": {
+    "winning": 15,
+    "losing": 15,
+    "scope": "Deterministic feasibility evidence; not exhaustive proof or human balance certification"
+  },
+  "audit": {
+    "vulnerabilities": 0,
+    "vite": "7.3.7",
+    "esbuild": "0.28.2"
+  },
+  "hostedReleaseRecord": "https://github.com/jaychtw/shape-match/issues/3",
+  "notVerified": [
+    "Physical devices and sustained device performance",
+    "Manual Safari/Firefox review",
+    "Screen-reader operation",
+    "Subjective audio and translation review",
+    "Independent first-time-player and balance/enjoyment review",
+    "Final G5 acceptance"
+  ]
+}

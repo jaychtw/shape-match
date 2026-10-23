@@ -1,4 +1,4 @@
-name: Validate G2 slice
+name: Validate production candidate
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -17,12 +17,14 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
-      - run: npm run test:browser
+      - run: npm run test:browser -- --workers=3
+      - run: npm run test:compat
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: g2-browser-evidence
+          name: g4-browser-evidence
           path: |
             playwright-report/
+            playwright-compat-report/
             test-results/
             docs/evidence/*.png

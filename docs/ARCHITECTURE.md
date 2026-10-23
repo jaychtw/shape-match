@@ -38,3 +38,15 @@ Keep the approved compact 8×8 composition by default. Tap two cells or start a 
 ### Failure handling
 
 Ordinary `NO_MATCH`/`NOT_ADJACENT` rejections visibly return and use no move. `SHUFFLE_LIMIT`, `UNSHUFFLABLE`, `RESOLUTION_LIMIT`, malformed actions, typed engine exceptions and presentation discrepancies take a separate localized recovery path. A local/downloadable diagnostic contains engine version/commit, config, seed, initial/current engine serialization and accepted/attempted actions—no personal data or credentials. No board is silently regenerated. Tests use actual deterministic engine failures; these expected safety-budget fixtures do not constitute engine defects.
+
+## Production extension (G3–G4)
+
+`level.ts` is the structured 15-level manifest, validated at module initialization for sequence, chapters, unique IDs/seeds, six types, 8×8 geometry, move budgets, objectives and special setups. The engine validates configuration semantics. The approved G2 definition is unchanged as level 1. Authored specials use the engine's public detached state/validated `loadGame` interface; no board rule or resolution is reimplemented. The same controller/projection/animation pipeline serves every level and Free Play.
+
+`progress.ts` models completions, successor unlocking and best scores independently of engine rules. `main.ts` owns native modal navigation, confirmation, bilingual objectives and settings. Navigation dialogs preserve the active session. Mode switches save/resume separate Journey and Free Play slots; choosing a different level confirms replacement of an unfinished Journey even from Free Play. Completed active levels can be replayed. The primary save still uses the G2 version-1 envelope and storage key; old G2 saves remain compatible.
+
+Free Play uses `moveLimit: null` and `objectives: []` supported by the engine. To bound storage, after 256 accepted actions the diagnostic replay checkpoints its initial state to the prior exact serialization, then appends further actions. Board, RNG, score, moves and future behavior are never reset. Corrupt primary and mode slots require explicit recovery. Corrupt progression is disclosed, retained, and copied to a damaged-data key before explicit reset. Local saves are not accounts or cross-device sync; no client save is treated as a security boundary.
+
+`audio.ts` synthesizes original short oscillators/envelopes and an optional eight-note background melody locally using Web Audio after a user gesture. Voices are capped at 32, ended nodes disconnect, background timing pauses while hidden/muted, and volume/mute/effects/music preferences persist. No downloaded audio assets, external services, analytics, paid dependencies or personal information were introduced.
+
+Current authority is [G3–G4 authorization](design/G3-G4-AUTHORIZATION.md). G1/G2 approvals remain historical decisions. Final G5 acceptance is pending.

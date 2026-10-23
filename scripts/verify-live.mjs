@@ -35,11 +35,22 @@ try {
    await page.reload();assert.deepEqual(await read(),saved);
    await expect(page.locator('.cell')).toHaveCount(64);
   }
+  const journeySave=await read();
+  const activate=async locator=>mobile?locator.tap():locator.click();
+  await activate(page.locator('#free'));assert.equal((await read()).level,'free-play');await expect(page.locator('#moves')).toHaveText('∞');
+  const freeGame=loadGame((await read()).state),freeMove=freeGame.listLegalMoves()[0];assert.ok(freeGame.applyMove(freeMove).ok);
+  await activate(page.locator(`[data-cell="${freeMove.from.row*8+freeMove.from.col}"]`));await activate(page.locator(`[data-cell="${freeMove.to.row*8+freeMove.to.col}"]`));
+  await expect(page.locator('.board')).toHaveAttribute('data-moves','1');await expect(page.locator('.board')).toHaveAttribute('data-reconciled','true');assert.deepEqual(JSON.parse((await read()).state),freeGame.state);
+  const freeSave=await read();await page.reload();assert.deepEqual(await read(),freeSave);
+  await activate(page.locator('#journey'));assert.deepEqual(await read(),journeySave);
+  await activate(page.locator('#settings'));await page.locator('[data-preference=muted]').check();await page.locator('[data-preference=music]').check();await page.getByRole('slider').fill('30');await activate(page.getByRole('button',{name:'Back to game',exact:true}));
+  await page.reload();assert.deepEqual(await read(),journeySave);const prefs=await page.evaluate(()=>JSON.parse(localStorage.getItem('shape-match-preferences')));assert.equal(prefs.muted,true);assert.equal(prefs.music,true);assert.equal(prefs.volume,.3);
+  await activate(page.locator('#journey'));await expect(page.locator('[data-level]')).toHaveCount(15);await expect(page.locator('[data-level]:disabled')).toHaveCount(14);await activate(page.getByRole('button',{name:'Back to game',exact:true}));
   await page.getByRole('button',{name:'Switch to Traditional Chinese'}).click();await expect(page.locator('html')).toHaveAttribute('lang','zh-TW');
   const beforeSwitch=await read();await page.reload();await expect(page.locator('html')).toHaveAttribute('lang','zh-TW');assert.deepEqual(await read(),beforeSwitch);
   await page.screenshot({path:`${output}/live-${mobile?'mobile':'desktop'}-zh-TW.png`,fullPage:true});
   assert.deepEqual(errors,[]);
-  reports.push({viewport:mobile?'390×844 touch-emulated':'1440×1100 desktop',httpStatus:200,entry,scriptSha256:scriptHash,gameplayTurns:2,engineDOMEquality:'passed',saveReloadAndDeterministicContinuation:'passed',languageReload:'zh-TW passed',pageErrors:0});
+  reports.push({viewport:mobile?'390×844 touch-emulated':'1440×1100 desktop',httpStatus:200,entry,scriptSha256:scriptHash,gameplayTurns:3,journeyFreePlayNavigation:'exact separate sessions passed',menuLevels:15,audioPreferencesReload:'passed',engineDOMEquality:'passed',saveReloadAndDeterministicContinuation:'passed',languageReload:'zh-TW passed',pageErrors:0});
   await context.close();
  }
  const report={commit,url,reports};
