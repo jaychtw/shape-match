@@ -71,3 +71,10 @@ The approved silhouettes, palette, dimensional SVG pieces and board treatment ar
 Physical devices, Safari/Firefox, screen readers, independent first-time players and human balance/enjoyment review remain unverified. No mathematical solvability claim, universal performance guarantee or full product acceptance is made. Audio, 15 authored levels, chapter progression, full menus/tutorials and Free Play remain later gated production work; their absence is not silently declared completion. Dark mode is explicitly deferred from v1.0.
 
 No new engine defect or unresolved release-blocking code defect was observed; no GitHub Issue was filed. Expected budget failures are preserved/reproducible and do not justify patching the engine. The user must grant explicit G2 approval before G3.
+
+
+## Live HTTPS verification route
+
+Pages verification runs as a post-deployment `verify-live` job in the hosted workflow, using normal public certificate validation. `scripts/verify-live.mjs` checks the deployed module bytes against the local production build, makes two actual moves in each desktop/touch context, compares the saved engine and rendered piece state, reloads between moves to verify deterministic continuation, switches to zh-TW and reloads, and captures screenshots/JSON as the `g2-live-verification` artifact. The job's exact SHA/status is reported in the final handoff.
+
+The cloud machine's direct live Chromium check hit `ERR_CERT_AUTHORITY_INVALID`; system curl HTTPS verified the page successfully. Its browser NSS store lacks the environment proxy CA. Automatic approval review rejected a proposed persistent browser CA addition because it would broaden future trust. No certificate verification was disabled and no trust store was changed. Hosted live verification avoids that machine-specific trust issue; it is distinct from local Chromium's 32-case application suite.
