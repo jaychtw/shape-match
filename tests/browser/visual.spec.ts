@@ -99,7 +99,15 @@ test('mobile touch tap, swipe, enlarged targets and pan controls',async({browser
  const cdp=await context.newCDPSession(page);const x=from!.x+from!.width/2,y=from!.y+from!.height/2;
  await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:to!.x+to!.width/2,y:to!.y+to!.height/2}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
  await expect(page.locator('.board')).toHaveAttribute('data-moves','1');await expect(page.locator('.board')).toHaveAttribute('data-reconciled','true',{timeout:15000});await assertBoard(page,result.state);
- await page.getByRole('button',{name:'Larger pieces',exact:true}).tap();await expect(page.getByRole('button',{name:'Compact board',exact:true})).toBeVisible();expect((await page.locator('.cell').first().boundingBox())!.width).toBeGreaterThanOrEqual(44);
+ await page.evaluate(()=>{
+  (window as any).__touchLog=[];
+  for(const kind of ['pointerdown','pointerup','touchstart','touchend','mousedown','mouseup','click'])document.addEventListener(kind,e=>{
+   const p=e as PointerEvent,el=(e.target as Element).closest('button');(window as any).__touchLog.push({kind,target:el?.id||el?.dataset.cell||null,x:p.clientX,y:p.clientY,time:performance.now()});
+  },true);
+ });
+ await page.getByRole('button',{name:'Larger pieces',exact:true}).tap();
+ try{await expect(page.getByRole('button',{name:'Compact board',exact:true})).toBeVisible();}catch(error){throw new Error(String(error)+'\nTouch diagnostics: '+JSON.stringify(await page.evaluate(()=>({events:(window as any).__touchLog,scrollY,large:document.querySelector('#large')?.outerHTML,focus:document.activeElement?.id||document.activeElement?.getAttribute('data-cell')}))));}
+ expect((await page.locator('.cell').first().boundingBox())!.width).toBeGreaterThanOrEqual(44);
  await page.getByRole('button',{name:'Show right side of board'}).tap();await expect.poll(()=>page.locator('.board-scroll').evaluate(el=>el.scrollLeft)).toBeGreaterThan(0);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
  await page.getByRole('button',{name:'Show left side of board'}).tap();await expect.poll(()=>page.locator('.board-scroll').evaluate(el=>el.scrollLeft)).toBe(0);
  await page.locator('[data-cell="0"]').tap();await expect(page.locator('[data-cell="0"]')).toHaveAttribute('aria-pressed','true');await context.close();

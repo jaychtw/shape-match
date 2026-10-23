@@ -7,6 +7,7 @@
 - Add pointer/tap/swipe/keyboard controls and larger cells/pan/direction controls for narrow phones.
 - Add validated exact-state persistence, explicit corrupt-save recovery, backups, typed failure diagnostics and reduced-motion alternatives.
 - Cover all ten special pairs, creation/activation paths, real safety-budget failures, 600 simulated turns, complete browser win/loss routes and deterministic restoration.
+- Correct suppressed mobile compatibility clicks after board swipes; add hosted live-browser verification and GitHub failure annotations.
 - Retain approved assets/palette and pin the original engine artifact unchanged. Full production awaits explicit G2 approval.
 
 ## 0.1.0 — G1 visual study (2026-10-24, Asia/Taipei)

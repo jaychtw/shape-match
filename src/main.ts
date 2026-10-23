@@ -24,6 +24,26 @@ let selected=-1, focusCell=0, uiBusy=false;
 let feedback:{key:keyof Messages;values:Record<string,string|number>}={key:'readyPlay',values:{}};
 let errorCode:string|null=null, resultDismissed=false;
 const app=document.querySelector<HTMLDivElement>('#app')!;
+// Some touch browsers suppress compatibility clicks after a captured board gesture.
+// Activate off-board controls from a completed touch pointer, without relying on that click.
+let controlTouch:{id:number;control:HTMLButtonElement|HTMLInputElement;x:number;y:number}|null=null;
+app.addEventListener('pointerdown',event=>{
+ if(event.pointerType!=='touch'||!event.isPrimary)return;
+ const target=event.target as Element;
+ if(target.closest('.board'))return;
+ const control=target.closest<HTMLButtonElement|HTMLInputElement>('button,input[type=checkbox]')??target.closest('label')?.querySelector<HTMLInputElement>('input[type=checkbox]');
+ if(!control||control.disabled)return;
+ event.preventDefault();
+ controlTouch={id:event.pointerId,control,x:event.clientX,y:event.clientY};
+});
+app.addEventListener('pointerup',event=>{
+ if(!controlTouch||controlTouch.id!==event.pointerId)return;
+ const touch=controlTouch;controlTouch=null;
+ if(Math.hypot(event.clientX-touch.x,event.clientY-touch.y)>12||!touch.control.isConnected||touch.control.disabled)return;
+ event.preventDefault();touch.control.focus({preventScroll:true});touch.control.click();
+});
+app.addEventListener('pointercancel',()=>{controlTouch=null;});
+
 const specials:Special[]=['horizontal','vertical','bomb','color'];
 const t=()=>messages[lang];
 const number=(n:number)=>new Intl.NumberFormat(lang).format(n);
