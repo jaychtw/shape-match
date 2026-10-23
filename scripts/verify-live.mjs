@@ -5,7 +5,7 @@ import {existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {chromium,expect} from '@playwright/test';
 import {loadGame} from '@jaychtw/match3-core';
-const url='https://jaychtw.github.io/shape-match/';
+const url=process.env.SHAPE_MATCH_VERIFY_URL||'https://jaychtw.github.io/shape-match/';
 const commit=process.env.GITHUB_SHA||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 const output='test-results/live';mkdirSync(output,{recursive:true});
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined)});
@@ -42,7 +42,7 @@ try {
   await activate(page.locator(`[data-cell="${freeMove.from.row*8+freeMove.from.col}"]`));await activate(page.locator(`[data-cell="${freeMove.to.row*8+freeMove.to.col}"]`));
   await expect(page.locator('.board')).toHaveAttribute('data-moves','1');await expect(page.locator('.board')).toHaveAttribute('data-reconciled','true');assert.deepEqual(JSON.parse((await read()).state),freeGame.state);
   const freeSave=await read();await page.reload();assert.deepEqual(await read(),freeSave);
-  await activate(page.locator('#journey'));assert.deepEqual(await read(),journeySave);
+  await activate(page.locator('#journey'));assert.deepEqual(await read(),journeySave);await expect(page.getByRole('dialog')).not.toBeVisible();
   await activate(page.locator('#settings'));await page.locator('[data-preference=muted]').check();await page.locator('[data-preference=music]').check();await page.getByRole('slider').fill('30');await activate(page.getByRole('button',{name:'Back to game',exact:true}));
   await page.reload();assert.deepEqual(await read(),journeySave);const prefs=await page.evaluate(()=>JSON.parse(localStorage.getItem('shape-match-preferences')));assert.equal(prefs.muted,true);assert.equal(prefs.music,true);assert.equal(prefs.volume,.3);
   await activate(page.locator('#journey'));await expect(page.locator('[data-level]')).toHaveCount(15);await expect(page.locator('[data-level]:disabled')).toHaveCount(14);await activate(page.getByRole('button',{name:'Back to game',exact:true}));

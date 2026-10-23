@@ -38,7 +38,16 @@ document.addEventListener('visibilitychange',()=>sound.music());
 // Some touch browsers suppress compatibility clicks after a captured board gesture.
 // Activate off-board controls from a completed touch pointer, without relying on that click.
 let controlTouch:{id:number;control:HTMLButtonElement|HTMLInputElement;x:number;y:number}|null=null;
+let handledControlTap:{x:number;y:number;until:number}|null=null;
+// A touch-generated native click can be retargeted to newly rendered controls.
+// Suppress that one trailing click; real mouse pointerdown and keyboard remain native.
+app.addEventListener('click',event=>{
+ if(!handledControlTap||!event.isTrusted||event.detail===0||performance.now()>handledControlTap.until)return;
+ if(Math.hypot(event.clientX-handledControlTap.x,event.clientY-handledControlTap.y)>24)return;
+ handledControlTap=null;event.preventDefault();event.stopImmediatePropagation();
+},true);
 app.addEventListener('pointerdown',event=>{
+ if(event.pointerType==='mouse')handledControlTap=null;
  if(event.pointerType!=='touch'||!event.isPrimary)return;
  const target=event.target as Element;
  if(target.closest('.board'))return;
@@ -51,7 +60,7 @@ app.addEventListener('pointerup',event=>{
  if(!controlTouch||controlTouch.id!==event.pointerId)return;
  const touch=controlTouch;controlTouch=null;
  if(Math.hypot(event.clientX-touch.x,event.clientY-touch.y)>12||!touch.control.isConnected||touch.control.disabled)return;
- event.preventDefault();touch.control.focus({preventScroll:true});touch.control.click();
+ event.preventDefault();handledControlTap={x:event.clientX,y:event.clientY,until:performance.now()+800};touch.control.focus({preventScroll:true});touch.control.click();
 });
 app.addEventListener('pointercancel',()=>{controlTouch=null;});
 

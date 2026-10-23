@@ -6,6 +6,7 @@
 - Progression/unlocking, chapter selection, replay, complete outcomes, unlimited Free Play, separate exact mode saves, confirmation and explicit damaged-data recovery.
 - English and Traditional Chinese objectives, menus, settings, tutorials and accessibility labels. Approved shapes/board/palette retained; reduced motion, keyboard and enlarged touch alternatives maintained.
 - Original synthesized effects and optional melody with persisted mute, volume, music/effect settings. No new service, telemetry or runtime asset dependency.
+- Prevent touch-generated native clicks from reactivating newly rendered mode controls; retain immediate mouse/keyboard use and add a touch navigation regression.
 - Patch Vite/esbuild development tooling advisories; full dependency audit reports zero vulnerabilities. Engine pin unchanged.
 - Original G2 regressions retained; expanded full-campaign, persistence, audio/preferences, menu accessibility and Firefox/WebKit automation. Hosted Pages verification checks actual deployed bytes and gameplay.
 - G1/G2 approved. Final G5 creative acceptance, independent player/balance review and manual device/accessibility/audio checks remain pending; see production QA. Dark mode remains deferred.

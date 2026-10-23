@@ -43,6 +43,8 @@ The pinned engine owns every rule, score, move, objective and outcome. Ordered e
 
 Hosted CI runs frozen installation, TypeScript, unit/integration tests, build, Chromium gameplay and Firefox/WebKit compatibility tests. The manual Pages workflow repeats these checks, deploys `dist`, then verifies live asset hashes, actual desktop/touch gameplay, exact engine/DOM state, deterministic reload, Journey/Free Play navigation, all level tiles, language and audio preferences. Reports and screenshots are uploaded as artifacts.
 
+For a local predeployment run of the same verification flow, set `SHAPE_MATCH_VERIFY_URL` to the local production preview URL. The report records its target; a local run does not establish public readiness. Hosted release verification uses the public URL by default.
+
 Publication is authorized for G5 review: `gh workflow run pages.yml --ref main`. Verify exact-commit CI, deployment and live interaction separately. Reuse platform GitHub authentication and the configured API/Pages domains; never put credential values in source or chat.
 
 **Stop at G5 for the user's explicit final acceptance.** Physical devices, manual Safari, screen readers and independent human balance/first-time-player review are not certified by automated tests.
