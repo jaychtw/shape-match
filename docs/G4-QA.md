@@ -1,6 +1,6 @@
-# Shape Match production QA — G3/G4 candidate
+# Shape Match v1.0.0 — release QA
 
-Final creative acceptance is **pending G5**. G1 visuals and G2 implementation were approved; [current authorization](design/G3-G4-AUTHORIZATION.md) permits production/QA without intermediate gates. Dark mode remains an approved deferral. No new game-rule, visual-direction, security or service exception was introduced.
+Final creative acceptance is **approved at G5**, recorded on 2026-10-24 (Asia/Taipei). **Status: Released.** See the [approval and release record](RELEASE-v1.0.0.md). Approved production commit: `857dfe124cbce152b4aa118550f11276cbb7414e`. G1/G2 and the authorized G3/G4 work are complete. Dark mode remains an approved deferral. No new game-rule, visual-direction, security or service exception was introduced.
 
 ## Scope and architecture
 
@@ -63,7 +63,7 @@ No TLS verification was disabled and no persistent trust store changed. The clou
 
 ## UGDS checklist
 
-Baseline immutable commit `d5c6696efdd6efc028118600466db44aecae0c9b`, unchanged local source. Pass here denotes the available engineering evidence; final aesthetic and product acceptance remains G5.
+Baseline immutable commit `d5c6696efdd6efc028118600466db44aecae0c9b`, unchanged local source. Pass here denotes the available engineering evidence; final aesthetic and product acceptance was granted by the creative director at G5. Unperformed manual checks remain explicitly unverified and non-blocking.
 
 | Requirement | Status | Evidence / limit |
 |---|---|---|
@@ -77,8 +77,8 @@ Baseline immutable commit `d5c6696efdd6efc028118600466db44aecae0c9b`, unchanged 
 | A01 interaction | Pass | silhouette distinction, keyboard/focus/labels, axe, target alternatives; manual screen reader Not Verified |
 | A02 motion/sound | Pass | reduced/system motion; persisted mute/volume/music/effects and visual equivalents |
 | V01 production assets | Pass | approved original geometric SVGs, no concept-art substitution |
-| V02 visual acceptance | Not Verified | G1/G2 approved; final composed production review belongs to G5 |
-| V03 consistency | Pass | approved shapes/board/style retained in actual captures; G5 aesthetic review pending |
+| V02 visual acceptance | Pass | G1/G2/G5 explicitly approved by the creative director; see release record |
+| V03 consistency | Pass | approved shapes/board/style retained in actual captures; G5 approved |
 | V04 representative scene | Pass | G1/G2 explicit approvals and G2 firsthand gameplay |
 | V05 no silent downgrade | Pass | no material art/rule substitution; dark-mode deferral approved |
 | V06 evidence | Pass | actual desktop/mobile game, tutorials, menus, final campaign and live captures |
@@ -90,17 +90,17 @@ Baseline immutable commit `d5c6696efdd6efc028118600466db44aecae0c9b`, unchanged 
 | Q02 browser gameplay | Pass | real inputs, full campaign, desktop/touch, localized failure/retry/reload |
 | Q03 balance | Not Verified | 15 win/loss witnesses pass; human difficulty/enjoyment review pending |
 | Q04 accessibility validation | Pass | automated axe/keyboard/focus; manual screen reader Not Verified |
-| Q05 release integrity | See release record | [Exact-SHA CI, deployment and live checks](https://github.com/jaychtw/shape-match/issues/3) establish this separately from local success |
+| Q05 release integrity | Pass | [Exact-SHA CI, deployment and live checks](https://github.com/jaychtw/shape-match/issues/3) establish this separately from local success |
 | Q06 evidence/limits | Pass | report, deterministic routes, screenshots, honest manual gaps |
-| C01 ownership | Pass | G5 reserved to user |
+| C01 ownership | Pass | user exercised final acceptance authority and formally approved G5 |
 | C02 escalation | Pass | no material scope/security/visual exception introduced |
 | C03 standard changes | Not Applicable | UGDS unchanged; project changelog records implementation |
 
-## Unverified requirements / G5 review
+## Remaining non-blocking verification follow-ups
 
-Physical iOS/Android touch accuracy and accessibility; actual Safari manual review; manual Firefox visual/audio review (distinct from automation); VoiceOver/NVDA/TalkBack or other screen-reader operation; subjective audio quality and device permission behavior; sustained performance/battery/thermal behavior on ordinary phones; independent first-time-player, cultural/translation and balance/enjoyment review; final creative acceptance. Do not interpret automated WebKit as physical Safari certification.
+Physical iOS/Android touch accuracy and accessibility; actual Safari manual review; manual Firefox visual/audio review (distinct from automation); VoiceOver/NVDA/TalkBack or other screen-reader operation; subjective audio quality and device permission behavior; sustained performance/battery/thermal behavior on ordinary phones; independent first-time-player, cultural/translation and balance/enjoyment review remain unverified. Final creative acceptance has now been granted at G5. Do not interpret automated WebKit as physical Safari certification.
 
-Outstanding QA is tracked in [physical touch/performance #1](https://github.com/jaychtw/shape-match/issues/1) and [manual accessibility/Safari/player review #2](https://github.com/jaychtw/shape-match/issues/2). These track known verification limitations, not fabricated observed device failures. Final release links are appended below. No critical unresolved implementation defect is knowingly waived. These manual gaps remain visible for G5; this report does not declare final product acceptance or general device certification.
+Outstanding QA is tracked in [physical touch/performance #1](https://github.com/jaychtw/shape-match/issues/1) and [manual accessibility/Safari/player review #2](https://github.com/jaychtw/shape-match/issues/2). These track known verification limitations, not fabricated observed device failures. Final links and explicit approval are recorded in [release notes](RELEASE-v1.0.0.md). No critical unresolved implementation defect is knowingly waived. These manual gaps remain non-blocking follow-ups after G5 approval; neither this report nor creative acceptance claims general device certification.
 
 ## Hosted browser infrastructure
 
@@ -110,4 +110,4 @@ Initial hosted Chromium passed all 39 cases and WebKit passed both cases. Firefo
 
 The first deployed G3 candidate’s live touch check exposed a duplicated activation when returning from Free Play to Journey: a completed touch explicitly activated the old control, then a trusted native compatibility click reached its replacement at the same coordinates and opened the level menu. The exact failure also reproduced locally before the fix. The root identifies native touch clicks using pointer type/source capabilities and suppresses them for controls already activated by pointerup. A position/time fallback supports browsers without those fields; each new pointer gesture clears that fallback. Keyboard, real mouse and the explicit programmatic activation remain native. No engine or interaction model changed.
 
-The new touch regression covers actual moves, reload, exact separate mode restoration, settings/checkbox/language controls through DOM replacement, and immediate real mouse/keyboard use. An initial timing guard passed five local repetitions, the 40-case suite and local preflight, but the bundled hosted Chromium still reproduced the failure. Explicit native-touch detection was added and passed three focused local repetitions; the full suite and exact public check must pass for the final source in the release record. Failure diagnostics retain pointer type, trust, source capabilities and post-dispatch cancellation. The full suite and exact public verification are rerun for the corrected candidate; the final release record identifies that source and result. The live script also accepts an explicit `SHAPE_MATCH_VERIFY_URL` for local preflight, records the target, and continues to default to the actual public HTTPS site in hosted release checks. No certificate exception is used.
+The new touch regression covers actual moves, reload, exact separate mode restoration, settings/checkbox/language controls through DOM replacement, and immediate real mouse/keyboard use. An initial timing guard passed five local repetitions, the 40-case suite and local preflight, but the bundled hosted Chromium still reproduced the failure. Explicit native-touch detection was added and passed three focused local repetitions; the full suite and exact public check subsequently passed for the approved production source in the release record. Failure diagnostics retain pointer type, trust, source capabilities and post-dispatch cancellation. The full suite and exact public verification passed for the corrected candidate; the release record identifies that approved source and result. The live script also accepts an explicit `SHAPE_MATCH_VERIFY_URL` for local preflight, records the target, and continues to default to the actual public HTTPS site in hosted release checks. No certificate exception is used.

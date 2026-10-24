@@ -1,6 +1,6 @@
 # ADR 001: TypeScript, Vite and dimensional vector pieces
 
-Status: proposed visual language, implemented G1 foundation. Node >=22; validated on Node 24.19.0.
+Current status: **Released — v1.0.0**, G5 approved 2026-10-24 (Asia/Taipei). [Release record](RELEASE-v1.0.0.md). The initial G1/G2 sections below are historical; the production extension describes the released architecture. The application requires Node 24; the engine independently supports Node >=22.
 
 Use a lightweight DOM interface and original layered SVG assets. An 8×8 grid does not need a rendering framework or canvas: native buttons offer focus, keyboard and touch semantics, while SVG allows silhouette clarity, dimensional highlights, beveled rims, shadows and scalable special markers. Vite bundles the engine and local assets for offline runtime independence. No fonts, images, telemetry or services are fetched at runtime. These assets are original code-created assets; no third-party artwork licenses apply.
 
@@ -49,4 +49,4 @@ Free Play uses `moveLimit: null` and `objectives: []` supported by the engine. T
 
 `audio.ts` synthesizes original short oscillators/envelopes and an optional eight-note background melody locally using Web Audio after a user gesture. Voices are capped at 32, ended nodes disconnect, background timing pauses while hidden/muted, and volume/mute/effects/music preferences persist. No downloaded audio assets, external services, analytics, paid dependencies or personal information were introduced.
 
-Current authority is [G3–G4 authorization](design/G3-G4-AUTHORIZATION.md). G1/G2 approvals remain historical decisions. Final G5 acceptance is pending.
+Final authority is the creative director’s [G5 approval and release record](RELEASE-v1.0.0.md), following the [G3–G4 authorization](design/G3-G4-AUTHORIZATION.md). G1/G2/G5 are approved. v1.0 is closed as a reference implementation: preserve the pinned engine, event-driven resolution, exact reconciliation/persistence, localization and accessibility patterns. Future games should reference the immutable `v1.0.0` snapshot; this closure authorizes no new v1.0 implementation work.

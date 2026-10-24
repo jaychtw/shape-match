@@ -1,8 +1,8 @@
 # Shape Match
 
-A bilingual geometric match-3 game: 15 handcrafted levels in three chapters and unlimited Free Play. G1 and G2 are approved. The production candidate is being prepared for final **G5 creative acceptance**. Dark mode is deferred from v1.0.
+A bilingual geometric match-3 game: 15 handcrafted levels in three chapters and unlimited Free Play. **Status: Released — v1.0.0.** The creative director formally approved G5 on 2026-10-24 (Asia/Taipei). Shape Match v1.0 is closed and serves as the reference implementation for future Match3 Core games. Dark mode is deferred from v1.0.
 
-Play at **https://jaychtw.github.io/shape-match/**. See [production QA](docs/G4-QA.md) for candidate status, evidence and limits.
+Play at **https://jaychtw.github.io/shape-match/**. See [production QA](docs/G4-QA.md) for verification evidence and remaining non-blocking limits.
 
 ## Develop and verify
 
@@ -36,7 +36,7 @@ The pinned engine owns every rule, score, move, objective and outcome. Ordered e
 
 ## Evidence and release
 
-- [GDD](docs/design/GDD-v1.0.md), [UGDS](docs/design/UGDS-v1.0.0.md), [current authorization](docs/design/G3-G4-AUTHORIZATION.md)
+- [GDD](docs/design/GDD-v1.0.md), [UGDS](docs/design/UGDS-v1.0.0.md), [G5 approval and release notes](docs/RELEASE-v1.0.0.md)
 - [Architecture and engine identity](docs/ARCHITECTURE.md)
 - [Production QA](docs/G4-QA.md), [level evidence](docs/evidence/level-validation.json)
 - [Historical G2 QA](docs/G2-QA.md), [G1 report](docs/QA.md); screenshots under `docs/evidence/`
@@ -45,6 +45,6 @@ Hosted CI runs frozen installation, TypeScript, unit/integration tests, build, C
 
 For a local predeployment run of the same verification flow, set `SHAPE_MATCH_VERIFY_URL` to the local production preview URL. The report records its target; a local run does not establish public readiness. Hosted release verification uses the public URL by default.
 
-Publication is authorized for G5 review: `gh workflow run pages.yml --ref main`. Verify exact-commit CI, deployment and live interaction separately. Reuse platform GitHub authentication and the configured API/Pages domains; never put credential values in source or chat.
+The released production snapshot is annotated tag [`v1.0.0`](https://github.com/jaychtw/shape-match/releases/tag/v1.0.0), pointing to `857dfe124cbce152b4aa118550f11276cbb7414e`. The existing Pages deployment serves that approved snapshot. Closure documentation is maintained separately on `main`; it does not change the tagged production code. Verify exact-commit CI, deployment and live interaction separately. Reuse platform GitHub authentication and the configured API/Pages domains; never put credential values in source or chat.
 
-**Stop at G5 for the user's explicit final acceptance.** Physical devices, manual Safari, screen readers and independent human balance/first-time-player review are not certified by automated tests.
+**G5 is approved; v1.0 is Released and closed.** No further v1.0 feature or design work is authorized by this closure. [QA #1](https://github.com/jaychtw/shape-match/issues/1) and [QA #2](https://github.com/jaychtw/shape-match/issues/2) remain open as documented non-blocking follow-ups. Physical devices, manual Safari, screen readers and independent human balance/first-time-player review are not certified by creative acceptance or automated tests.
